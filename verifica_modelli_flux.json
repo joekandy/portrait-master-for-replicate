@@ -1,0 +1,34 @@
+{
+  "id": "test-modelli-flux",
+  "nodes": [
+    {
+      "id": 1,
+      "type": "UNETLoader",
+      "pos": [0, 0],
+      "size": [315, 82],
+      "widgets_values": ["flux1-dev-fp8.safetensors"],
+      "outputs": [{"name": "MODEL", "type": "MODEL"}],
+      "title": "TEST: Load UNET"
+    },
+    {
+      "id": 2,
+      "type": "DualCLIPLoader", 
+      "pos": [0, 100],
+      "size": [315, 106],
+      "widgets_values": ["t5xxl_fp16.safetensors", "clip_l.safetensors", "flux"],
+      "outputs": [{"name": "CLIP", "type": "CLIP"}],
+      "title": "TEST: Load CLIP"
+    },
+    {
+      "id": 3,
+      "type": "VAELoader",
+      "pos": [0, 220],
+      "size": [315, 58], 
+      "widgets_values": ["ae.safetensors"],
+      "outputs": [{"name": "VAE", "type": "VAE"}],
+      "title": "TEST: Load VAE"
+    }
+  ],
+  "links": [],
+  "version": 0.4
+} 
