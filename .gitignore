@@ -2,12 +2,10 @@
 .DS_Store
 Thumbs.db
 *.tmp
-desktop.ini
 
 # File Python
 __pycache__/
 *.py[cod]
-*.egg-info/
 
 # Modelli grandi (esclusi da GitHub)
 models/checkpoints/*.safetensors
@@ -18,29 +16,14 @@ models/clip_vision/*.safetensors
 models/loras/*.safetensors
 models/upscale_models/*.pth
 models/impact/*.pth
-models/impact/*.pt
 *.bin
 *.ckpt
 
-# File temporanei e output
+# File temporanei
 *.log
 *.bak
 output/
 temp/
-input/
 
-# Directory node_modules
-node_modules/
-
-# File di configurazione locale
-config.json
-settings.json
-
-# Mantieni struttura directory e file LUT
-!models/LUTs/*.cube
-!models/*/
-!.gitkeep
-
-# File di backup
-*.backup
-*.old 
+# Mantieni file LUT e struttura
+!models/LUTs/*.cube 

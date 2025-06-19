@@ -48,6 +48,7 @@ chmod +x PORTRAIT_MASTER_COMPLETE_SETUP.sh
 - **ComfyUI Impact Pack** - Auto-Detailer
 - **Ultimate SD Upscale** - Upscaling
 - **RGThree** - Fast Bypasser
+- **FOCUS Nodes** - GlobalSeedFN
 - **JoyCaption** - Image captioning
 
 ## 🎯 Workflow Disponibili

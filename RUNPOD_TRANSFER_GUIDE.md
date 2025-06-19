@@ -132,7 +132,7 @@ chmod +x ngrok
 
 ### 1. Controlla Custom Nodes
 ```bash
-ls custom_nodes/ | grep -E "(WaveSpeed|LayerStyle|Impact|Ultimate|rgthree|JoyCaption|Image-Saver)"
+ls custom_nodes/ | grep -E "(WaveSpeed|LayerStyle|Impact|Ultimate|rgthree|FOCUS|JoyCaption|Image-Saver)"
 ```
 
 ### 2. Controlla Modelli Core

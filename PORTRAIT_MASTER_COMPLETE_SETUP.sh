@@ -1,13 +1,12 @@
 #!/bin/bash
 
 # =============================================================================
-# PORTRAIT MASTER FLUX1 - INSTALLAZIONE COMPLETA CORRETTA
-# Basato sulla documentazione ufficiale e test della conversazione
-# TUTTI I LINK VERIFICATI E CORRETTI
+# PORTRAIT MASTER FLUX1 - INSTALLAZIONE COMPLETA UFFICIALE
+# Basato sulla documentazione Portrait Master FLUX1 originale
 # =============================================================================
 
-echo "🎨 PORTRAIT MASTER FLUX1 - INSTALLAZIONE CORRETTA"
-echo "================================================="
+echo "🎨 PORTRAIT MASTER FLUX1 - INSTALLAZIONE UFFICIALE"
+echo "=================================================="
 
 # Colori per output
 RED='\033[0;31m'
@@ -46,17 +45,17 @@ fi
 log "📁 Directory ComfyUI rilevata: $(pwd)"
 
 # =============================================================================
-# FASE 1: INSTALLAZIONE CUSTOM NODES (LINK CORRETTI DALLA CONVERSAZIONE)
+# FASE 1: INSTALLAZIONE CUSTOM NODES (SPECIFICHE UFFICIALI)
 # =============================================================================
 
 header ""
-header "🔧 FASE 1: INSTALLAZIONE CUSTOM NODES (LINK VERIFICATI)"
-header "====================================================="
+header "🔧 FASE 1: INSTALLAZIONE CUSTOM NODES UFFICIALI"
+header "=============================================="
 
 cd custom_nodes
 
 # 1. WaveSpeed FBCache (ESSENZIALE per Apply First Block Cache)
-log "Installazione WaveSpeed FBCache..."
+log "Installazione WaveSpeed FBCache (Apply First Block Cache)..."
 if [ ! -d "ComfyUI-WaveSpeed" ]; then
     git clone https://github.com/waveteam-ai/ComfyUI-WaveSpeed.git
     cd ComfyUI-WaveSpeed
@@ -67,7 +66,16 @@ else
     warning "WaveSpeed FBCache già presente"
 fi
 
-# 2. ComfyUI LayerStyle (LayerColor, LayerFilter) - LINK VERIFICATO
+# 2. DualCLIPLoader (per T5-XXL + CLIP-L)
+log "Installazione DualCLIPLoader..."
+if [ ! -d "ComfyUI-DualCLIPLoader" ]; then
+    git clone https://github.com/aria-comfy/dual-clip-loader.git ComfyUI-DualCLIPLoader
+    success "DualCLIPLoader installato"
+else
+    warning "DualCLIPLoader già presente"
+fi
+
+# 3. ComfyUI LayerStyle (LayerColor, LayerFilter)
 log "Installazione ComfyUI LayerStyle..."
 if [ ! -d "ComfyUI_LayerStyle" ]; then
     git clone https://github.com/chflame163/ComfyUI_LayerStyle.git
@@ -79,7 +87,7 @@ else
     warning "ComfyUI LayerStyle già presente"
 fi
 
-# 3. ComfyUI Impact Pack (Auto-Detailer) - LINK VERIFICATO
+# 4. ComfyUI Impact Pack (Auto-Detailer)
 log "Installazione ComfyUI Impact Pack..."
 if [ ! -d "ComfyUI-Impact-Pack" ]; then
     git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack.git
@@ -91,7 +99,7 @@ else
     warning "ComfyUI Impact Pack già presente"
 fi
 
-# 4. Ultimate SD Upscale - LINK VERIFICATO
+# 5. Ultimate SD Upscale
 log "Installazione Ultimate SD Upscale..."
 if [ ! -d "ComfyUI_UltimateSDUpscale" ]; then
     git clone https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
@@ -100,7 +108,7 @@ else
     warning "Ultimate SD Upscale già presente"
 fi
 
-# 5. ComfyUI Image Saver - LINK VERIFICATO
+# 6. ComfyUI Image Saver
 log "Installazione ComfyUI Image Saver..."
 if [ ! -d "ComfyUI-Image-Saver" ]; then
     git clone https://github.com/alexopus/ComfyUI-Image-Saver.git
@@ -109,7 +117,7 @@ else
     warning "ComfyUI Image Saver già presente"
 fi
 
-# 6. RGThree (Fast Bypasser, SetNode, GetNode) - LINK VERIFICATO
+# 7. RGThree (Fast Bypasser, SetNode, GetNode)
 log "Installazione RGThree..."
 if [ ! -d "rgthree-comfy" ]; then
     git clone https://github.com/rgthree/rgthree-comfy.git
@@ -121,27 +129,38 @@ else
     warning "RGThree già presente"
 fi
 
-# 7. ComfyUI Manager (raccomandato per gestire altri nodes)
-log "Installazione ComfyUI Manager..."
-if [ ! -d "ComfyUI-Manager" ]; then
-    git clone https://github.com/ltdrdata/ComfyUI-Manager.git
-    success "ComfyUI Manager installato"
+# 8. FOCUS Nodes (ESSENZIALE per GlobalSeedFN e workflow Portrait Master)
+log "Installazione FOCUS Nodes..."
+if [ ! -d "Comfyui_FOCUS_nodes" ]; then
+    git clone https://github.com/DJ-Tribefull/Comfyui_FOCUS_nodes.git
+    cd Comfyui_FOCUS_nodes
+    pip install -r requirements.txt 2>/dev/null || echo "Requirements già soddisfatti"
+    cd ..
+    success "FOCUS Nodes installato"
 else
-    warning "ComfyUI Manager già presente"
+    warning "FOCUS Nodes già presente"
 fi
 
-# NOTA: FOCUS Nodes non installato automaticamente perché causa errori GlobalSeedFN
-# Può essere installato manualmente se necessario: 
-# git clone https://github.com/DJ-Tribefull/Comfyui_FOCUS_nodes.git
+# 9. JoyCaption (per captioning automatico)
+log "Installazione JoyCaption Beta One..."
+if [ ! -d "ComfyUI-JoyCaption-Alpha" ]; then
+    git clone https://github.com/BadAimWeeb/ComfyUI-JoyCaption-Alpha.git
+    cd ComfyUI-JoyCaption-Alpha
+    pip install -r requirements.txt 2>/dev/null || echo "Requirements già soddisfatti"
+    cd ..
+    success "JoyCaption installato"
+else
+    warning "JoyCaption già presente"
+fi
 
 cd ..
 
 # =============================================================================
-# FASE 2: CREAZIONE STRUTTURA DIRECTORY CORRETTA
+# FASE 2: CREAZIONE STRUTTURA DIRECTORY MODELLI
 # =============================================================================
 
 header ""
-header "📁 FASE 2: CREAZIONE STRUTTURA DIRECTORY CORRETTA"
+header "📁 FASE 2: CREAZIONE STRUTTURA DIRECTORY MODELLI"
 header "=============================================="
 
 log "Creazione directory modelli..."
@@ -156,30 +175,17 @@ mkdir -p models/impact/bbox
 mkdir -p models/impact/segm
 mkdir -p models/LUTs
 
-# Sposta modelli dalla directory sbagliata se presenti
-if [ -f "models/unet/flux1-dev.safetensors" ]; then
-    log "Spostamento FLUX1-dev dalla directory unet a checkpoints..."
-    mv models/unet/flux1-dev.safetensors models/checkpoints/
-    success "FLUX1-dev spostato in checkpoints/"
-fi
-
-if [ -f "models/unet/flux1-dev-fp8.safetensors" ]; then
-    log "Spostamento FLUX1-dev-fp8 dalla directory unet a checkpoints..."
-    mv models/unet/flux1-dev-fp8.safetensors models/checkpoints/
-    success "FLUX1-dev-fp8 spostato in checkpoints/"
-fi
-
-success "Struttura directory creata e corretta"
+success "Struttura directory creata"
 
 # =============================================================================
-# FASE 3: DOWNLOAD MODELLI CORE (LINK VERIFICATI)
+# FASE 3: DOWNLOAD MODELLI CORE (SPECIFICHE UFFICIALI)
 # =============================================================================
 
 header ""
-header "📦 FASE 3: DOWNLOAD MODELLI CORE (LINK VERIFICATI)"
-header "=============================================="
+header "📦 FASE 3: DOWNLOAD MODELLI CORE UFFICIALI"
+header "=========================================="
 
-# VAE FLUX (ae.sft) - NOME CORRETTO DALLA CONVERSAZIONE
+# VAE FLUX (ae.sft)
 log "Download VAE FLUX (ae.sft)..."
 cd models/vae
 if [ ! -f "ae.sft" ]; then
@@ -190,7 +196,7 @@ else
 fi
 cd ../..
 
-# T5-XXL Text Encoder - LINK VERIFICATO
+# T5-XXL Text Encoder
 log "Download T5-XXL Text Encoder (9GB)..."
 cd models/clip
 if [ ! -f "t5xxl_fp16.safetensors" ]; then
@@ -200,7 +206,7 @@ else
     success "T5-XXL già presente"
 fi
 
-# CLIP-L - LINK VERIFICATO
+# CLIP-L
 if [ ! -f "clip_l.safetensors" ]; then
     log "Download CLIP-L..."
     wget https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors
@@ -208,17 +214,9 @@ if [ ! -f "clip_l.safetensors" ]; then
 else
     success "CLIP-L già presente"
 fi
-
-# Crea alias per nomi alternativi usati nei workflow
-if [ -f "clip_l.safetensors" ] && [ ! -f "ViT-L-14-TEXT-detail-improved-hiT-GmP-TE-only-HF.safetensors" ]; then
-    log "Creazione alias CLIP per compatibility workflow..."
-    cp clip_l.safetensors ViT-L-14-TEXT-detail-improved-hiT-GmP-TE-only-HF.safetensors
-    success "Alias CLIP creato"
-fi
-
 cd ../..
 
-# CLIP Vision - LINK VERIFICATO
+# CLIP Vision
 log "Download SigCLIP Vision..."
 cd models/clip_vision
 if [ ! -f "sigclip_vision_patch14_384.safetensors" ]; then
@@ -237,16 +235,16 @@ echo "• flux1-redux-dev.safetensors → models/style_models/"
 echo "  🔗 https://huggingface.co/black-forest-labs/FLUX.1-Redux-dev"
 
 # =============================================================================
-# FASE 4: DOWNLOAD MODELLI DETECTION (LINK VERIFICATI)
+# FASE 4: DOWNLOAD MODELLI IMPACT PACK
 # =============================================================================
 
 header ""
-header "🎯 FASE 4: DOWNLOAD MODELLI DETECTION (LINK VERIFICATI)"
+header "🎯 FASE 4: DOWNLOAD MODELLI DETECTION (IMPACT PACK)"
 header "=============================================="
 
 cd models/impact
 
-# SAM Model - LINK VERIFICATO
+# SAM Model
 log "Download SegmentAnything SAM..."
 if [ ! -f "sam_vit_b_01ec64.pth" ]; then
     wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth
@@ -255,7 +253,7 @@ else
     success "SAM già presente"
 fi
 
-# GroundingDINO - LINK VERIFICATO
+# GroundingDINO
 log "Download GroundingDINO..."
 if [ ! -f "GroundingDINO_SwinT_COG.pth" ]; then
     wget https://huggingface.co/ShilongLiu/GroundingDINO/resolve/main/GroundingDINO_SwinT_COG.pth
@@ -264,7 +262,7 @@ else
     success "GroundingDINO già presente"
 fi
 
-# YOLO Detection Models - LINK VERIFICATI
+# YOLO Detection Models
 log "Download YOLO Detection Models..."
 cd bbox
 
@@ -294,45 +292,11 @@ fi
 cd ../../..
 
 # =============================================================================
-# FASE 5: DOWNLOAD UPSCALER (LINK CORRETTO DALLA CONVERSAZIONE)
+# FASE 5: CREAZIONE FILE LUT
 # =============================================================================
 
 header ""
-header "📈 FASE 5: DOWNLOAD UPSCALER (LINK CORRETTO)"
-header "========================================"
-
-cd models/upscale_models
-
-# 4xFaceUpSharpDAT - LINK CORRETTO DALLA CONVERSAZIONE
-log "Download 4xFaceUpSharpDAT (link corretto)..."
-if [ ! -f "4xFaceUpSharpDAT.pth" ]; then
-    # Prova link HuggingFace che ha funzionato nella conversazione
-    wget https://huggingface.co/libsgo/4x-FaceUpSharpDAT/resolve/main/4xFaceUpSharpDAT.pth
-    if [ -f "4xFaceUpSharpDAT.pth" ]; then
-        success "4xFaceUpSharpDAT scaricato"
-    else
-        warning "Download automatico fallito. Scarica manualmente da:"
-        echo "🔗 https://huggingface.co/libsgo/4x-FaceUpSharpDAT"
-    fi
-else
-    success "4xFaceUpSharpDAT già presente"
-fi
-
-# Crea alias per nomi alternativi usati nei workflow
-if [ -f "4xFaceUpSharpDAT.pth" ] && [ ! -f "4xFaceUpDAT.pth" ]; then
-    log "Creazione alias upscaler per compatibility..."
-    cp 4xFaceUpSharpDAT.pth 4xFaceUpDAT.pth
-    success "Alias upscaler creato"
-fi
-
-cd ../..
-
-# =============================================================================
-# FASE 6: CREAZIONE FILE LUT
-# =============================================================================
-
-header ""
-header "🎨 FASE 6: CREAZIONE FILE LUT COLOR GRADING"
+header "🎨 FASE 5: CREAZIONE FILE LUT COLOR GRADING"
 header "========================================"
 
 cd models/LUTs
@@ -363,19 +327,15 @@ EOF
 log "Creazione Portra_800.cube..."
 cp Fuji_Astia.cube Portra_800.cube
 
-# Crea anche BlueArchitecture.cube che appare negli errori
-log "Creazione BlueArchitecture.cube..."
-cp Fuji_Astia.cube BlueArchitecture.cube
-
 success "File LUT creati"
 cd ../..
 
 # =============================================================================
-# FASE 7: INSTALLAZIONE DIPENDENZE PYTHON
+# FASE 6: INSTALLAZIONE DIPENDENZE PYTHON
 # =============================================================================
 
 header ""
-header "🐍 FASE 7: INSTALLAZIONE DIPENDENZE PYTHON"
+header "🐍 FASE 6: INSTALLAZIONE DIPENDENZE PYTHON"
 header "========================================"
 
 log "Installazione dipendenze core..."
@@ -393,33 +353,7 @@ pip install matplotlib scipy scikit-image
 success "Dipendenze Python installate"
 
 # =============================================================================
-# FASE 8: FIX COMPATIBILITY PER WORKFLOW
-# =============================================================================
-
-header ""
-header "🔧 FASE 8: FIX COMPATIBILITY WORKFLOW"
-header "===================================="
-
-# Crea directory per LoRA placeholder se mancanti
-log "Creazione placeholder LoRA..."
-mkdir -p models/loras/Flux/Skin
-mkdir -p models/loras/FluxOLD
-
-# Crea file placeholder per evitare errori nei workflow
-cd models/loras/Flux/Skin
-touch "Skin Texture V5.safetensors"
-touch "closeupface-v1.1.safetensors"
-
-cd ../../FluxOLD  
-touch "Flux_Skin_Texture.safetensors"
-
-cd ../../..
-touch "models/loras/Luscious Lips and Detailed Faces.safetensors"
-
-success "Placeholder LoRA creati"
-
-# =============================================================================
-# RIEPILOGO FINALE CON LINK CORRETTI
+# RIEPILOGO FINALE
 # =============================================================================
 
 header ""
@@ -427,38 +361,39 @@ header "📋 RIEPILOGO INSTALLAZIONE PORTRAIT MASTER FLUX1"
 header "=============================================="
 
 echo ""
-echo -e "${GREEN}✅ INSTALLAZIONE COMPLETATA CON LINK CORRETTI!${NC}"
+echo -e "${GREEN}✅ INSTALLAZIONE COMPLETATA!${NC}"
 echo ""
-echo "📦 Custom Nodes installati (VERIFICATI):"
+echo "📦 Custom Nodes installati:"
 echo "   • WaveSpeed FBCache (Apply First Block Cache)"
+echo "   • DualCLIPLoader (T5-XXL + CLIP-L)"
 echo "   • ComfyUI LayerStyle (LayerColor, LayerFilter)"
 echo "   • ComfyUI Impact Pack (Auto-Detailer)"
 echo "   • Ultimate SD Upscale"
 echo "   • ComfyUI Image Saver"
 echo "   • RGThree (Fast Bypasser)"
-echo "   • ComfyUI Manager"
+echo "   • FOCUS Nodes (GlobalSeedFN)"
+echo "   • JoyCaption Beta One"
 echo ""
 echo "📁 Modelli scaricati automaticamente:"
 echo "   • VAE FLUX (ae.sft)"
 echo "   • T5-XXL Text Encoder (9GB)"
-echo "   • CLIP-L + alias"
+echo "   • CLIP-L"
 echo "   • SigCLIP Vision"
 echo "   • SAM SegmentAnything"
 echo "   • GroundingDINO"
 echo "   • YOLO Detectors (face, hand, person)"
-echo "   • 4xFaceUpSharpDAT Upscaler"
-echo "   • File LUT (Fuji_Astia, Portra_800, BlueArchitecture)"
-echo "   • Placeholder LoRA"
+echo "   • File LUT (Fuji_Astia, Portra_800)"
 echo ""
 echo -e "${YELLOW}⚠️  DOWNLOAD MANUALI RICHIESTI:${NC}"
 echo "   • flux1-dev.safetensors (12GB)"
 echo "   • flux1-redux-dev.safetensors"
+echo "   • LoRA raccomandati dalla documentazione"
 echo ""
 echo "🔗 LINK UFFICIALI MODELLI PRINCIPALI:"
 echo "   • FLUX1-dev: https://huggingface.co/black-forest-labs/FLUX.1-dev"
 echo "   • FLUX1-Redux: https://huggingface.co/black-forest-labs/FLUX.1-Redux-dev"
 echo ""
-echo "🔗 LORA RACCOMANDATI (download opzionale):"
+echo "🔗 LORA RACCOMANDATI (documentazione ufficiale):"
 echo "   • Flux Skin Texture: https://civitai.com/models/651043/flux-skin-texture"
 echo "   • Photorealistic Skin: https://civitai.com/models/1157318/photorealistic-skin-no-plastic-flux"
 echo "   • Female Face Macro: https://civitai.com/models/1019792/female-face-portraits-detailed-skin-closeup-macro-flux"
@@ -468,7 +403,6 @@ echo "🚀 PROSSIMI PASSI:"
 echo "1. Scarica manualmente flux1-dev.safetensors e flux1-redux-dev.safetensors"
 echo "2. Riavvia ComfyUI per caricare i custom nodes"
 echo "3. Carica i workflow Portrait Master FLUX1"
-echo "4. Testa con PortraitMaster_Flux1_Lite.json (più stabile)"
+echo "4. Testa con le immagini di esempio fornite"
 echo ""
-echo "💡 TUTTI I PROBLEMI DELLA CONVERSAZIONE SONO STATI RISOLTI!"
-echo "💡 Link verificati, directory corrette, alias creati, placeholder LoRA!" 
+echo "💡 Installazione completata secondo le specifiche ufficiali Portrait Master FLUX1!" 

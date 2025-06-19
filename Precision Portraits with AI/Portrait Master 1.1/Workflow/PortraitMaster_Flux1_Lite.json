@@ -1384,7 +1384,7 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "flux1-dev.safetensors",
+        "flux1-dev-fp8.safetensors",
         "fp8_e4m3fn_fast"
       ],
       "color": "#901919",
