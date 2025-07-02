@@ -449,7 +449,7 @@
     },
     {
       "id": 609,
-      "type": "Note",
+      "type": "FreeMemory",
       "pos": [
         2354.17529296875,
         5147.46533203125
@@ -461,20 +461,27 @@
       "flags": {},
       "order": 48,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "name": "anything",
+          "type": "*",
+          "link": 899
+        }
+      ],
       "outputs": [],
       "properties": {
         "cnr_id": "comfyui_layerstyle",
         "ver": "1.0.90",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "FreeMemory",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: FreeMemory"
+        "vram",
+        true
       ],
       "color": "#124c12",
       "bgcolor": "#2b652b",
-      "class_type": "Note"
+      "class_type": "FreeMemory"
     },
     {
       "id": 579,
@@ -654,7 +661,7 @@
     },
     {
       "id": 589,
-      "type": "Note",
+      "type": "AddFilmGrain",
       "pos": [
         6661.71923828125,
         3626.163330078125
@@ -666,20 +673,36 @@
       "flags": {},
       "order": 33,
       "mode": 0,
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 862
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "image",
+          "links": [
+            853
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle",
         "ver": "1.0.90",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "AddFilmGrain",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: AddFilmGrain"
+        0.2,
+        0.4,
+        0.75
       ],
       "color": "#0b6a69",
       "bgcolor": "#248382",
-      "class_type": "Note"
+      "class_type": "AddFilmGrain"
     },
     {
       "id": 586,
@@ -1056,7 +1079,7 @@
     },
     {
       "id": 588,
-      "type": "Note",
+      "type": "ImageExposure+",
       "pos": [
         6364.666015625,
         3635.089599609375
@@ -1068,20 +1091,34 @@
       "flags": {},
       "order": 15,
       "mode": 0,
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 861
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "image",
+          "links": [
+            852
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle",
         "ver": "1.0.90",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "ImageExposure+",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: ImageExposure+"
+        0.0
       ],
       "color": "#0b6a69",
       "bgcolor": "#248382",
-      "class_type": "Note"
+      "class_type": "ImageExposure+"
     },
     {
       "id": 585,
@@ -1133,7 +1170,7 @@
     },
     {
       "id": 607,
-      "type": "Note",
+      "type": "WAS Image Interrogator",
       "pos": [
         1232.011962890625,
         4602.91357421875
@@ -1145,24 +1182,54 @@
       "flags": {},
       "order": 23,
       "mode": 0,
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 900
+        },
+        {
+          "name": "joycaption_beta1_model",
+          "type": "JOYCAPTIONBETA1_MODEL",
+          "link": 894
+        },
+        {
+          "name": "extra_options",
+          "shape": 7,
+          "type": "JoyCaption2ExtraOption",
+          "link": 895
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": [
+            896
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle_advance",
         "ver": "0f9184100e626e3202568a7cf890b3b92685a168",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "WAS Image Interrogator",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: WAS Image Interrogator"
+        "ViT-L-14/openai",
+        "best",
+        "fast",
+        76,
+        false
       ],
       "color": "#124c12",
       "bgcolor": "#2b652b",
-      "class_type": "Note"
+      "class_type": "WAS Image Interrogator"
     },
     {
       "id": 608,
-      "type": "Note",
+      "type": "LoadImageFromUrl",
       "pos": [
         730.1806640625,
         4335.98876953125
@@ -1177,19 +1244,27 @@
       "order": 4,
       "mode": 0,
       "inputs": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "name": "joycaption_beta1_model",
+          "type": "JOYCAPTIONBETA1_MODEL",
+          "links": [
+            894
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle_advance",
         "ver": "0f9184100e626e3202568a7cf890b3b92685a168",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "LoadImageFromUrl",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: LoadImageFromUrl"
+        ""
       ],
       "color": "#124c12",
       "bgcolor": "#2b652b",
-      "class_type": "Note"
+      "class_type": "LoadImageFromUrl"
     },
     {
       "id": 93,
@@ -2183,7 +2258,7 @@
     },
     {
       "id": 583,
-      "type": "Note",
+      "type": "ColorCorrect",
       "pos": [
         7377.4140625,
         3620.78076171875
@@ -2195,24 +2270,45 @@
       "flags": {},
       "order": 50,
       "mode": 0,
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 856
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "image",
+          "links": [
+            858
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle",
         "ver": "1.0.90",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "ColorCorrect",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: ColorCorrect"
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
       ],
       "color": "#0b6a69",
       "bgcolor": "#248382",
-      "class_type": "Note"
+      "class_type": "ColorCorrect"
     },
     {
       "id": 582,
-      "type": "Note",
+      "type": "ImageBrightnessContrast+",
       "pos": [
         6980.490234375,
         3625.703125
@@ -2224,20 +2320,35 @@
       "flags": {},
       "order": 42,
       "mode": 0,
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 855
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "image",
+          "links": [
+            854
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle",
         "ver": "1.0.90",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "ImageBrightnessContrast+",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: ImageBrightnessContrast+"
+        1.0,
+        1.0
       ],
       "color": "#0b6a69",
       "bgcolor": "#248382",
-      "class_type": "Note"
+      "class_type": "ImageBrightnessContrast+"
     },
     {
       "id": 601,

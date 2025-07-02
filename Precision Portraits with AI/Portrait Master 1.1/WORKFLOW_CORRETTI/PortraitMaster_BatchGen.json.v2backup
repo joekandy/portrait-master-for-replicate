@@ -43,8 +43,7 @@
         "prompt"
       ],
       "color": "#602d04",
-      "bgcolor": "#79461d",
-      "class_type": "SetNode"
+      "bgcolor": "#79461d"
     },
     {
       "id": 113,
@@ -86,8 +85,7 @@
       },
       "widgets_values": [],
       "color": "#602d04",
-      "bgcolor": "#79461d",
-      "class_type": "Number to String"
+      "bgcolor": "#79461d"
     },
     {
       "id": 114,
@@ -131,8 +129,7 @@
         "1"
       ],
       "color": "#602d04",
-      "bgcolor": "#79461d",
-      "class_type": "ShowText|pysssss"
+      "bgcolor": "#79461d"
     },
     {
       "id": 249,
@@ -169,8 +166,7 @@
         "prompt"
       ],
       "color": "#555504",
-      "bgcolor": "#6e6e1d",
-      "class_type": "GetNode"
+      "bgcolor": "#6e6e1d"
     },
     {
       "id": 190,
@@ -206,8 +202,7 @@
         "image_single_multi_P"
       ],
       "color": "#555504",
-      "bgcolor": "#6e6e1d",
-      "class_type": "SaveImage"
+      "bgcolor": "#6e6e1d"
     },
     {
       "id": 92,
@@ -239,8 +234,7 @@
       },
       "widgets_values": [],
       "color": "#555504",
-      "bgcolor": "#6e6e1d",
-      "class_type": "PreviewImage"
+      "bgcolor": "#6e6e1d"
     },
     {
       "id": 595,
@@ -274,8 +268,7 @@
         "ComfyUI"
       ],
       "color": "#124c12",
-      "bgcolor": "#2b652b",
-      "class_type": "SaveImage"
+      "bgcolor": "#2b652b"
     },
     {
       "id": 610,
@@ -316,8 +309,7 @@
         "image_upscale_10"
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159",
-      "class_type": "SetNode"
+      "bgcolor": "#3f5159"
     },
     {
       "id": 587,
@@ -354,8 +346,7 @@
         "image_upscale_10"
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159",
-      "class_type": "GetNode"
+      "bgcolor": "#3f5159"
     },
     {
       "id": 593,
@@ -391,8 +382,7 @@
       ],
       "color": "#124c12",
       "bgcolor": "#2b652b",
-      "shape": 1,
-      "class_type": "SaveImage"
+      "shape": 1
     },
     {
       "id": 590,
@@ -444,12 +434,11 @@
         ]
       ],
       "color": "#124c12",
-      "bgcolor": "#2b652b",
-      "class_type": "Image Comparer (rgthree)"
+      "bgcolor": "#2b652b"
     },
     {
       "id": 609,
-      "type": "Note",
+      "type": "FreeMemory",
       "pos": [
         2354.17529296875,
         5147.46533203125
@@ -461,20 +450,26 @@
       "flags": {},
       "order": 48,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "name": "anything",
+          "type": "*",
+          "link": 899
+        }
+      ],
       "outputs": [],
       "properties": {
         "cnr_id": "comfyui_layerstyle",
         "ver": "1.0.90",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "FreeMemory",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: FreeMemory"
+        "vram",
+        true
       ],
       "color": "#124c12",
-      "bgcolor": "#2b652b",
-      "class_type": "Note"
+      "bgcolor": "#2b652b"
     },
     {
       "id": 579,
@@ -519,8 +514,7 @@
         "widget_ue_connectable": {}
       },
       "color": "#0b6a69",
-      "bgcolor": "#248382",
-      "class_type": "Fast Bypasser (rgthree)"
+      "bgcolor": "#248382"
     },
     {
       "id": 580,
@@ -565,8 +559,7 @@
         "widget_ue_connectable": {}
       },
       "color": "#0b6a69",
-      "bgcolor": "#248382",
-      "class_type": "Fast Bypasser (rgthree)"
+      "bgcolor": "#248382"
     },
     {
       "id": 581,
@@ -612,8 +605,7 @@
         "widget_ue_connectable": {}
       },
       "color": "#0b6a69",
-      "bgcolor": "#248382",
-      "class_type": "Fast Bypasser (rgthree)"
+      "bgcolor": "#248382"
     },
     {
       "id": 584,
@@ -649,12 +641,11 @@
         "ComfyUI"
       ],
       "color": "#0b6a69",
-      "bgcolor": "#248382",
-      "class_type": "SaveImage"
+      "bgcolor": "#248382"
     },
     {
       "id": 589,
-      "type": "Note",
+      "type": "AddFilmGrain",
       "pos": [
         6661.71923828125,
         3626.163330078125
@@ -666,20 +657,35 @@
       "flags": {},
       "order": 33,
       "mode": 0,
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 862
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "image",
+          "links": [
+            853
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle",
         "ver": "1.0.90",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "AddFilmGrain",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: AddFilmGrain"
+        0.2,
+        0.4,
+        0.75
       ],
       "color": "#0b6a69",
-      "bgcolor": "#248382",
-      "class_type": "Note"
+      "bgcolor": "#248382"
     },
     {
       "id": 586,
@@ -731,8 +737,7 @@
         ]
       ],
       "color": "#0b6a69",
-      "bgcolor": "#248382",
-      "class_type": "Image Comparer (rgthree)"
+      "bgcolor": "#248382"
     },
     {
       "id": 140,
@@ -785,8 +790,7 @@
         "fp8_e4m3fn_fast"
       ],
       "color": "#901919",
-      "bgcolor": "#a93232",
-      "class_type": "UNETLoader"
+      "bgcolor": "#a93232"
     },
     {
       "id": 618,
@@ -823,8 +827,7 @@
         "clip"
       ],
       "color": "#432",
-      "bgcolor": "#653",
-      "class_type": "GetNode"
+      "bgcolor": "#653"
     },
     {
       "id": 591,
@@ -867,8 +870,7 @@
       },
       "widgets_values": [],
       "color": "#124c12",
-      "bgcolor": "#2b652b",
-      "class_type": "ConditioningZeroOut"
+      "bgcolor": "#2b652b"
     },
     {
       "id": 604,
@@ -918,8 +920,7 @@
       },
       "widgets_values": [],
       "color": "#124c12",
-      "bgcolor": "#2b652b",
-      "class_type": "CLIPTextEncode"
+      "bgcolor": "#2b652b"
     },
     {
       "id": 605,
@@ -962,8 +963,7 @@
         "The model stands in the center of the image, captured from a slightly low, frontal angle with a shallow depth of field that blurs the background. She has a slim, athletic build with a toned midsection, and her skin is smooth and dark-toned. Her face is oval-shaped with high cheekbones, and her eyes are directed slightly to the right with a neutral expression. She has long, wavy black hair that falls past her shoulders, and she wears a red and white striped fedora hat.\n\nHer outfit consists of a white, cropped tank top with \"NY\" in black letters, revealing her midriff. She pairs this with high-waisted, frayed denim shorts that have a silver, textured front pocket. The shorts are tight-fitting and accentuate her legs. She is barefoot, adding a casual, urban vibe to her look.\n\nThe lighting is natural, with soft, even illumination that highlights her features and outfit without harsh shadows. The background is blurred, creating a sense of motion and drawing attention to the model. The composition uses leading lines from the street and buildings, guiding the viewer's eye towards the model. The image is suggestive but safe for work (sfw). The overall style is modern and urban, with a focus on street fashion."
       ],
       "color": "#124c12",
-      "bgcolor": "#2b652b",
-      "class_type": "easy showAnything"
+      "bgcolor": "#2b652b"
     },
     {
       "id": 597,
@@ -1051,12 +1051,11 @@
         "ae.sft"
       ],
       "color": "#124c12",
-      "bgcolor": "#2b652b",
-      "class_type": "workflow>Extra nodes upscaler"
+      "bgcolor": "#2b652b"
     },
     {
       "id": 588,
-      "type": "Note",
+      "type": "ImageExposure+",
       "pos": [
         6364.666015625,
         3635.089599609375
@@ -1068,20 +1067,33 @@
       "flags": {},
       "order": 15,
       "mode": 0,
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 861
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "image",
+          "links": [
+            852
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle",
         "ver": "1.0.90",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "ImageExposure+",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: ImageExposure+"
+        0.0
       ],
       "color": "#0b6a69",
-      "bgcolor": "#248382",
-      "class_type": "Note"
+      "bgcolor": "#248382"
     },
     {
       "id": 585,
@@ -1128,12 +1140,11 @@
         "widget_ue_connectable": {}
       },
       "color": "#0b6a69",
-      "bgcolor": "#248382",
-      "class_type": "Fast Bypasser (rgthree)"
+      "bgcolor": "#248382"
     },
     {
       "id": 607,
-      "type": "Note",
+      "type": "WAS Image Interrogator",
       "pos": [
         1232.011962890625,
         4602.91357421875
@@ -1145,24 +1156,53 @@
       "flags": {},
       "order": 23,
       "mode": 0,
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 900
+        },
+        {
+          "name": "joycaption_beta1_model",
+          "type": "JOYCAPTIONBETA1_MODEL",
+          "link": 894
+        },
+        {
+          "name": "extra_options",
+          "shape": 7,
+          "type": "JoyCaption2ExtraOption",
+          "link": 895
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": [
+            896
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle_advance",
         "ver": "0f9184100e626e3202568a7cf890b3b92685a168",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "WAS Image Interrogator",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: WAS Image Interrogator"
+        "ViT-L-14/openai",
+        "best",
+        "fast",
+        76,
+        false
       ],
       "color": "#124c12",
-      "bgcolor": "#2b652b",
-      "class_type": "Note"
+      "bgcolor": "#2b652b"
     },
     {
       "id": 608,
-      "type": "Note",
+      "type": "LoadImageFromUrl",
       "pos": [
         730.1806640625,
         4335.98876953125
@@ -1177,19 +1217,26 @@
       "order": 4,
       "mode": 0,
       "inputs": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "name": "joycaption_beta1_model",
+          "type": "JOYCAPTIONBETA1_MODEL",
+          "links": [
+            894
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle_advance",
         "ver": "0f9184100e626e3202568a7cf890b3b92685a168",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "LoadImageFromUrl",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: LoadImageFromUrl"
+        ""
       ],
       "color": "#124c12",
-      "bgcolor": "#2b652b",
-      "class_type": "Note"
+      "bgcolor": "#2b652b"
     },
     {
       "id": 93,
@@ -1230,8 +1277,7 @@
         "image_Gemini"
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159",
-      "class_type": "SetNode"
+      "bgcolor": "#3f5159"
     },
     {
       "id": 90,
@@ -1276,8 +1322,7 @@
         "image"
       ],
       "color": "#555504",
-      "bgcolor": "#6e6e1d",
-      "class_type": "LoadImage"
+      "bgcolor": "#6e6e1d"
     },
     {
       "id": 602,
@@ -1372,8 +1417,7 @@
       ],
       "color": "#124c12",
       "bgcolor": "#2b652b",
-      "shape": 1,
-      "class_type": "Power Lora Loader (rgthree)"
+      "shape": 1
     },
     {
       "id": 599,
@@ -1409,8 +1453,7 @@
         "4xNomos8kHAT-L_otf.pth"
       ],
       "color": "#124c12",
-      "bgcolor": "#2b652b",
-      "class_type": "UpscaleModelLoader"
+      "bgcolor": "#2b652b"
     },
     {
       "id": 603,
@@ -1469,8 +1512,7 @@
         0.20000000000000004
       ],
       "color": "#124c12",
-      "bgcolor": "#2b652b",
-      "class_type": "workflow>sampler and seed upscaler"
+      "bgcolor": "#2b652b"
     },
     {
       "id": 598,
@@ -1531,8 +1573,7 @@
         1
       ],
       "color": "#124c12",
-      "bgcolor": "#2b652b",
-      "class_type": "DetailDaemonSamplerNode"
+      "bgcolor": "#2b652b"
     },
     {
       "id": 128,
@@ -1573,8 +1614,7 @@
         "vae"
       ],
       "color": "#322",
-      "bgcolor": "#533",
-      "class_type": "SetNode"
+      "bgcolor": "#533"
     },
     {
       "id": 132,
@@ -1624,8 +1664,7 @@
         "ae.sft"
       ],
       "color": "#901919",
-      "bgcolor": "#a93232",
-      "class_type": "VAELoader"
+      "bgcolor": "#a93232"
     },
     {
       "id": 188,
@@ -1650,8 +1689,7 @@
         "Logic Boolean\nSet to 1.00 to restart from first line of the wildcard file, 0.0 for normal execution\n\nNumber Counter\nSet start to 0.0 to begin from first line\n\nText Load\nSet the file_path to your wildcard text file\n\nLoad file\n\\ComfyUI\\input\\namefile.txt\n\n"
       ],
       "color": "#432",
-      "bgcolor": "#653",
-      "class_type": "Note"
+      "bgcolor": "#653"
     },
     {
       "id": 118,
@@ -1696,8 +1734,7 @@
         "Your job is to depict the character facing forward with the chin slightly raised. Maintain all other elements — balanced facial structure, voluminous natural afro, deep brown skin tone, soft studio lighting, bare shoulders, and gold necklace."
       ],
       "color": "#602d04",
-      "bgcolor": "#79461d",
-      "class_type": "ShowText|pysssss"
+      "bgcolor": "#79461d"
     },
     {
       "id": 112,
@@ -1762,8 +1799,7 @@
         1.0000000000000002
       ],
       "color": "#602d04",
-      "bgcolor": "#79461d",
-      "class_type": "Number Counter"
+      "bgcolor": "#79461d"
     },
     {
       "id": 116,
@@ -1815,8 +1851,7 @@
         1
       ],
       "color": "#602d04",
-      "bgcolor": "#79461d",
-      "class_type": "Logic Boolean"
+      "bgcolor": "#79461d"
     },
     {
       "id": 120,
@@ -1880,8 +1915,7 @@
         0
       ],
       "color": "#602d04",
-      "bgcolor": "#79461d",
-      "class_type": "Text Load Line From File"
+      "bgcolor": "#79461d"
     },
     {
       "id": 700,
@@ -1918,8 +1952,7 @@
         "flux_only_model"
       ],
       "color": "#223",
-      "bgcolor": "#335",
-      "class_type": "GetNode"
+      "bgcolor": "#335"
     },
     {
       "id": 141,
@@ -1960,8 +1993,7 @@
         "clip"
       ],
       "color": "#432",
-      "bgcolor": "#653",
-      "class_type": "SetNode"
+      "bgcolor": "#653"
     },
     {
       "id": 143,
@@ -2016,8 +2048,7 @@
         "default"
       ],
       "color": "#901919",
-      "bgcolor": "#a93232",
-      "class_type": "DualCLIPLoader"
+      "bgcolor": "#a93232"
     },
     {
       "id": 134,
@@ -2058,8 +2089,7 @@
         "flux"
       ],
       "color": "#223",
-      "bgcolor": "#335",
-      "class_type": "SetNode"
+      "bgcolor": "#335"
     },
     {
       "id": 699,
@@ -2100,8 +2130,7 @@
         "flux_only_model"
       ],
       "color": "#223",
-      "bgcolor": "#335",
-      "class_type": "SetNode"
+      "bgcolor": "#335"
     },
     {
       "id": 142,
@@ -2151,8 +2180,7 @@
         0
       ],
       "color": "#901919",
-      "bgcolor": "#a93232",
-      "class_type": "ApplyFBCacheOnModel"
+      "bgcolor": "#a93232"
     },
     {
       "id": 135,
@@ -2178,12 +2206,11 @@
         "residual diff threshold da \n\nFBCache rdt=0.06\nFBCache rdt=0.08\nFBCache rdt=0.10\nFBCache rdt=0.12"
       ],
       "color": "#901919",
-      "bgcolor": "#a93232",
-      "class_type": "Note"
+      "bgcolor": "#a93232"
     },
     {
       "id": 583,
-      "type": "Note",
+      "type": "ColorCorrect",
       "pos": [
         7377.4140625,
         3620.78076171875
@@ -2195,24 +2222,44 @@
       "flags": {},
       "order": 50,
       "mode": 0,
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 856
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "image",
+          "links": [
+            858
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle",
         "ver": "1.0.90",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "ColorCorrect",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: ColorCorrect"
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
       ],
       "color": "#0b6a69",
-      "bgcolor": "#248382",
-      "class_type": "Note"
+      "bgcolor": "#248382"
     },
     {
       "id": 582,
-      "type": "Note",
+      "type": "ImageBrightnessContrast+",
       "pos": [
         6980.490234375,
         3625.703125
@@ -2224,20 +2271,34 @@
       "flags": {},
       "order": 42,
       "mode": 0,
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 855
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "image",
+          "links": [
+            854
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle",
         "ver": "1.0.90",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "ImageBrightnessContrast+",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: ImageBrightnessContrast+"
+        1.0,
+        1.0
       ],
       "color": "#0b6a69",
-      "bgcolor": "#248382",
-      "class_type": "Note"
+      "bgcolor": "#248382"
     },
     {
       "id": 601,
@@ -2330,8 +2391,7 @@
         false
       ],
       "color": "#124c12",
-      "bgcolor": "#2b652b",
-      "class_type": "UltimateSDUpscale"
+      "bgcolor": "#2b652b"
     },
     {
       "id": 606,
@@ -2368,8 +2428,7 @@
         "JoyCaption options removed - use alternative captioning"
       ],
       "color": "#124c12",
-      "bgcolor": "#2b652b",
-      "class_type": "Note"
+      "bgcolor": "#2b652b"
     },
     {
       "id": 594,
@@ -2408,8 +2467,7 @@
         "image_Gemini"
       ],
       "color": "#124c12",
-      "bgcolor": "#2b652b",
-      "class_type": "GetNode"
+      "bgcolor": "#2b652b"
     },
     {
       "id": 247,
@@ -2493,8 +2551,7 @@
         "randomize"
       ],
       "color": "#555504",
-      "bgcolor": "#6e6e1d",
-      "class_type": "GeminiFlash"
+      "bgcolor": "#6e6e1d"
     }
   ],
   "links": [

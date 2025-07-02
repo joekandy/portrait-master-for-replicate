@@ -5,259 +5,105 @@
 # Con link corretti e funzionanti
 # =============================================================================
 
-echo "🚀 AVVIO INSTALLAZIONE PORTRAIT MASTER FLUX1 COMPLETA"
-echo "======================================================"
+echo "🎨 Portrait Master FLUX Complete Installation"
+echo "============================================"
 
-# Colori per output
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-BLUE='\033[0;34m'
-NC='\033[0m' # No Color
+# Vai nella directory ComfyUI
+cd /workspace/ComfyUI
 
-# Funzione per logging
-log() {
-    echo -e "${BLUE}[$(date '+%H:%M:%S')]${NC} $1"
-}
+echo "📦 Step 1: Download FLUX Core Models..."
 
-success() {
-    echo -e "${GREEN}✅ $1${NC}"
-}
+# CLIP Text Encoders
+echo "📥 Downloading CLIP Text Encoders..."
+wget -O models/clip/clip_l.safetensors "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors"
+wget -O models/clip/t5xxl_fp16.safetensors "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors"
 
-warning() {
-    echo -e "${YELLOW}⚠️  $1${NC}"
-}
+# VAE FLUX
+echo "📥 Downloading FLUX VAE..."
+wget -O models/vae/ae.safetensors "https://huggingface.co/ffxvs/vae-flux/resolve/main/ae.safetensors"
 
-error() {
-    echo -e "${RED}❌ $1${NC}"
-}
+# FLUX Redux Style Model
+echo "📥 Downloading FLUX Redux Style Model..."
+mkdir -p models/style_models
+wget -O models/style_models/flux1-redux-dev.safetensors "https://huggingface.co/black-forest-labs/FLUX.1-Redux-dev/resolve/main/flux1-redux-dev.safetensors"
 
-# Verifica se siamo nella directory ComfyUI
-if [ ! -d "custom_nodes" ]; then
-    error "❌ Non sei nella directory ComfyUI! Vai nella directory principale di ComfyUI e rilancia lo script."
-    exit 1
-fi
+# CLIP Vision per Redux
+echo "📥 Downloading CLIP Vision for Redux..."
+wget -O models/clip_vision/sigclip_vision_patch14_384.safetensors "https://huggingface.co/Comfy-Org/sigclip_vision_384/resolve/main/sigclip_vision_patch14_384.safetensors"
 
-log "📁 Directory ComfyUI rilevata correttamente"
-
-# =============================================================================
-# FASE 1: INSTALLAZIONE CUSTOM NODES AGGIORNATI
-# =============================================================================
-
-echo ""
-echo "🔧 FASE 1: INSTALLAZIONE CUSTOM NODES"
-echo "======================================"
+echo "🔧 Step 2: Install Required Custom Nodes..."
 
 cd custom_nodes
 
-# 1. FOCUS Nodes (LINK CORRETTO)
-log "Installazione FOCUS Nodes..."
-if [ ! -d "Comfyui_FOCUS_nodes" ]; then
-    git clone https://github.com/DJ-Tribefull/Comfyui_FOCUS_nodes.git
-    success "FOCUS Nodes installato"
-else
-    warning "FOCUS Nodes già presente"
-fi
+# WaveSpeed FBCache
+echo "📥 Installing WaveSpeed FBCache..."
+git clone https://github.com/wavespeed-comfy/comfy_fbcache.git
 
-# 2. ComfyUI Manager (se non presente)
-log "Installazione ComfyUI Manager..."
-if [ ! -d "ComfyUI-Manager" ]; then
-    git clone https://github.com/ltdrdata/ComfyUI-Manager.git
-    success "ComfyUI Manager installato"
-else
-    warning "ComfyUI Manager già presente"
-fi
+# ComfyUI-portrait-master
+echo "📥 Installing Portrait Master..."
+git clone https://github.com/florestefano1975/comfyui-portrait-master.git
 
-# 3. WaveSpeed FBCache
-log "Installazione WaveSpeed FBCache..."
-if [ ! -d "ComfyUI-WaveSpeed" ]; then
-    git clone https://github.com/waveteam-ai/ComfyUI-WaveSpeed.git
-    success "WaveSpeed installato"
-else
-    warning "WaveSpeed già presente"
-fi
+# ComfyUI-KJNodes
+echo "📥 Installing KJNodes..."
+git clone https://github.com/kijai/ComfyUI-KJNodes.git
 
-# 4. RGThree (Fast Bypasser, etc.)
-log "Installazione RGThree..."
-if [ ! -d "rgthree-comfy" ]; then
-    git clone https://github.com/rgthree/rgthree-comfy.git
-    success "RGThree installato"
-else
-    warning "RGThree già presente"
-fi
+# ComfyUI Easy Use
+echo "📥 Installing Easy Use..."
+git clone https://github.com/yolain/ComfyUI-Easy-Use.git
 
-# 5. ComfyUI LayerStyle
-log "Installazione ComfyUI LayerStyle..."
-if [ ! -d "ComfyUI_LayerStyle" ]; then
+# ComfyUI-mxtoolkit
+echo "📥 Installing MX Toolkit..."
+git clone https://github.com/mixlabteam/ComfyUI-mxtoolkit.git
+
+# LayerStyle 
+echo "📥 Installing LayerStyle..."
     git clone https://github.com/chflame163/ComfyUI_LayerStyle.git
-    success "LayerStyle installato"
-else
-    warning "LayerStyle già presente"
-fi
 
-# 6. ComfyUI Impact Pack
-log "Installazione ComfyUI Impact Pack..."
-if [ ! -d "ComfyUI-Impact-Pack" ]; then
-    git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack.git
-    success "Impact Pack installato"
-else
-    warning "Impact Pack già presente"
-fi
+echo "🎭 Step 3: Install Portrait Enhancement LoRAs..."
 
-# 7. Ultimate SD Upscale
-log "Installazione Ultimate SD Upscale..."
-if [ ! -d "ComfyUI_UltimateSDUpscale" ]; then
-    git clone https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
-    success "Ultimate SD Upscale installato"
-else
-    warning "Ultimate SD Upscale già presente"
-fi
+cd ../models/loras
 
-# 8. ComfyUI Image Saver
-log "Installazione Image Saver..."
-if [ ! -d "ComfyUI-Image-Saver" ]; then
-    git clone https://github.com/alexopus/ComfyUI-Image-Saver.git
-    success "Image Saver installato"
-else
-    warning "Image Saver già presente"
-fi
+# LoRA per texture pelle (usando link diretti Civitai)
+echo "📥 Downloading Skin Enhancement LoRAs..."
 
-cd ..
+# Flux Skin Texture
+curl -L -o flux_skin_texture.safetensors "https://civitai.com/api/download/models/651043?type=Model&format=SafeTensor"
 
-# =============================================================================
-# FASE 2: DOWNLOAD MODELLI AGGIORNATI (LINK CORRETTI)
-# =============================================================================
+# Photorealistic Skin
+curl -L -o photorealistic_skin_no_plastic.safetensors "https://civitai.com/api/download/models/1157318?type=Model&format=SafeTensor"
 
+# Skin Tone Glamour
+curl -L -o skin_tone_glamour.safetensors "https://civitai.com/api/download/models/562884?type=Model&format=SafeTensor"
+
+# Female Face Macro
+curl -L -o female_face_macro.safetensors "https://civitai.com/api/download/models/1019792?type=Model&format=SafeTensor"
+
+# Luscious Lips
+curl -L -o luscious_lips.safetensors "https://civitai.com/api/download/models/951276?type=Model&format=SafeTensor"
+
+# ESC Makeup
+curl -L -o esc_makeup.safetensors "https://civitai.com/api/download/models/1060990?type=Model&format=SafeTensor"
+
+echo "🌐 Step 4: Setup Gradio Interface..."
+
+cd /workspace
+
+# Install Gradio
+pip install gradio requests Pillow numpy
+
+# Clone Gradio API wrapper
+cd ComfyUI/custom_nodes
+git clone https://github.com/SharCodin/comfy-gradio-api.git
+
+echo "✅ Installation Complete!"
 echo ""
-echo "📦 FASE 2: DOWNLOAD MODELLI CON LINK CORRETTI"
-echo "============================================="
-
-# Directory dei modelli
-mkdir -p models/checkpoints
-mkdir -p models/vae
-mkdir -p models/clip
-mkdir -p models/loras
-mkdir -p models/upscale_models
-
-# Flux Skin Texture LoRA (LINK CORRETTO DA CIVITAI)
-log "Download Flux Skin Texture LoRA..."
-cd models/loras
-if [ ! -f "FluxRealSkin-v2.0.safetensors" ]; then
-    echo "📋 Per scaricare da Civitai, usa questo comando con la tua API key:"
-    echo "wget --header='Authorization: Bearer TUA_CIVITAI_API_KEY' 'https://civitai.com/api/download/models/827325' -O FluxRealSkin-v2.0.safetensors"
-    echo ""
-    echo "🔑 Vai su https://civitai.com/user/account per ottenere la tua API key"
-    echo "📥 Oppure scarica manualmente da: https://civitai.com/models/651043?modelVersionId=827325"
-    warning "Download manuale richiesto per Flux Skin Texture"
-else
-    success "Flux Skin Texture già presente"
-fi
-cd ../..
-
-# 4xFaceUpSharpDAT Upscaler (LINK CORRETTO DA HUGGINGFACE)
-log "Download 4xFaceUpSharpDAT Upscaler..."
-cd models/upscale_models
-if [ ! -f "4xFaceUpSharpDAT.pth" ]; then
-    echo "📋 Download diretto da HuggingFace:"
-    wget https://huggingface.co/libsgo/4x-FaceUpSharpDAT/resolve/main/4xFaceUpSharpDAT.pth
-    if [ -f "4xFaceUpSharpDAT.pth" ]; then
-        success "4xFaceUpSharpDAT scaricato"
-    else
-        warning "Errore download - scarica manualmente da: https://huggingface.co/libsgo/4x-FaceUpSharpDAT/blob/main/4xFaceUpSharpDAT.pth"
-    fi
-else
-    success "4xFaceUpSharpDAT già presente"
-fi
-cd ../..
-
-# Altri modelli essenziali (link verificati)
-log "Download altri modelli essenziali..."
-
-# T5XXL Text Encoder
-cd models/clip
-if [ ! -f "t5xxl_fp16.safetensors" ]; then
-    log "Download T5XXL..."
-    wget https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors
-    success "T5XXL scaricato"
-else
-    success "T5XXL già presente"
-fi
-
-# CLIP-L
-if [ ! -f "clip_l.safetensors" ]; then
-    log "Download CLIP-L..."
-    wget https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors
-    success "CLIP-L scaricato"
-else
-    success "CLIP-L già presente"
-fi
-cd ../..
-
-# VAE FLUX (ae.sft)
-cd models/vae
-if [ ! -f "ae.sft" ]; then
-    log "Download VAE FLUX (ae.sft)..."
-    wget https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/ae.safetensors -O ae.sft
-    success "VAE FLUX scaricato"
-else
-    success "VAE FLUX già presente"
-fi
-cd ../..
-
-# =============================================================================
-# FASE 3: INSTALLAZIONE DIPENDENZE PYTHON
-# =============================================================================
-
+echo "🚀 To start ComfyUI with Gradio:"
+echo "   cd /workspace/ComfyUI"
+echo "   python main.py --listen 0.0.0.0 --port 8188"
 echo ""
-echo "🐍 FASE 3: INSTALLAZIONE DIPENDENZE PYTHON"
-echo "=========================================="
-
-# Installa dipendenze per i custom nodes
-log "Installazione dipendenze Python..."
-
-# Per Impact Pack
-pip install segment-anything
-
-# Per LayerStyle  
-pip install rembg
-
-# Per altri nodes
-pip install opencv-python
-pip install pillow
-
-success "Dipendenze Python installate"
-
-# =============================================================================
-# RIEPILOGO FINALE
-# =============================================================================
-
+echo "🎯 Portrait Master workflows are ready!"
+echo "📁 Location: ComfyUI/custom_nodes/comfyui-portrait-master/"
 echo ""
-echo "📋 RIEPILOGO INSTALLAZIONE"
-echo "========================="
-echo ""
-echo "✅ Custom Nodes installati:"
-echo "   - FOCUS Nodes (✅ link aggiornato)"
-echo "   - WaveSpeed FBCache"
-echo "   - RGThree"
-echo "   - ComfyUI LayerStyle" 
-echo "   - ComfyUI Impact Pack"
-echo "   - Ultimate SD Upscale"
-echo "   - ComfyUI Image Saver"
-echo ""
-echo "📦 Modelli scaricati:"
-echo "   - T5XXL Text Encoder"
-echo "   - CLIP-L"
-echo "   - VAE FLUX (ae.sft)"
-echo "   - 4xFaceUpSharpDAT Upscaler (✅ link aggiornato)"
-echo ""
-echo "⚠️  Download manuali richiesti:"
-echo "   - Flux Skin Texture da Civitai (richiede API key)"
-echo "   - Modello FLUX1-dev principale (se non presente)"
-echo ""
-echo "🔗 Link corretti forniti:"
-echo "   - FOCUS: https://github.com/DJ-Tribefull/Comfyui_FOCUS_nodes"
-echo "   - Skin Texture: https://civitai.com/models/651043?modelVersionId=827325"  
-echo "   - Upscaler: https://huggingface.co/libsgo/4x-FaceUpSharpDAT"
-echo ""
-echo "🚀 INSTALLAZIONE COMPLETATA!"
-echo "Riavvia ComfyUI per applicare tutte le modifiche." 
+echo "🔗 For Gradio web interface:"
+echo "   cd custom_nodes/comfy-gradio-api"
+echo "   python app.py" 

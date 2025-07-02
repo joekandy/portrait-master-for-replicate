@@ -1,0 +1,62 @@
+# Core dependencies
+torch==2.4.0
+torchvision==0.19.0
+torchaudio==2.4.0
+--index-url https://download.pytorch.org/whl/cu121
+
+# ComfyUI core
+transformers>=4.25.1
+tokenizers>=0.13.3
+sentencepiece
+safetensors>=0.4.2
+aiohttp
+accelerate
+pyyaml
+Pillow
+scipy
+tqdm
+psutil
+
+# Image processing
+opencv-python==4.10.0.84
+opencv-contrib-python==4.10.0.84
+numpy==1.26.4
+matplotlib
+imageio
+imageio-ffmpeg
+
+# Web and API
+requests
+fastapi
+uvicorn
+websockets
+aiofiles
+
+# Model handling
+huggingface-hub
+diffusers
+xformers
+compel
+
+# Utilities
+python-multipart
+python-dotenv
+pathlib
+typing-extensions
+
+# RunPod specific
+runpod
+
+# Optional optimizations
+bitsandbytes
+optimum
+einops
+
+# Audio (for video workflows)
+librosa
+soundfile
+
+# Additional utilities
+gitpython
+wget
+aria2p 

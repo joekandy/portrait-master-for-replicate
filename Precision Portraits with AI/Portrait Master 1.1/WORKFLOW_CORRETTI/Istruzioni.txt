@@ -1,0 +1,50 @@
+Cominciamo con un chiarimento importante: il processo non sarà né breve né immediato. La prima volta richiederà tempo e attenzione, ma se seguirai ogni step con precisione, il risultato sarà professionale.
+Non è un sistema "one click", ma uno strumento modulare pensato per generare immagini coerenti, fotorealistiche e controllate.
+
+A) Creazione del talent | PortraitMaster_Flux1_Lite.json
+Inizia generando l’immagine base del tuo talent o influencer.
+Carica il workflow PortraitMaster_Flux1_Lite.json, ideale per questa fase perché più snello e focalizzato sulla qualità del volto.
+Una volta trovata un’immagine portrait coerente, fotorealistica e in alta risoluzione, hai completato il primo step.
+
+B) Dataset facciale | Workflow 1.4.1_A
+Procedi ora con la generazione delle immagini per il training del primo LoRA.
+Utilizza il GPT:
+👉 Character Prompt Catalogue — Products
+
+Obiettivo: generare almeno 40 immagini del volto del tuo talent in diverse angolazioni e pose.
+Per il primo LoRA bastano 5–7 immagini selezionate, ma serviranno tutte per ottenere la versione finale ad alta coerenza.
+
+C) Outfit & pose | Workflow 1.4.1_D
+Passa ora alla generazione del set outfit/prodotto.
+GPT da usare:
+👉 Pose + Outfit Prompt Generator
+
+Flusso consigliato:
+
+Carica su ChatGPT:
+
+1 foto portrait del talent
+
+1 foto con pose reference
+
+1 immagine dell’outfit o prodotto
+
+GPT ti guiderà con domande e genererà i prompt ottimali per ogni combinazione.
+
+Durante l’upscale con il workflow, se hai già un primo LoRA attivo del personaggio, il sistema ricostruirà automaticamente i tratti somatici originali in alta risoluzione, migliorando la coerenza visiva.
+
+Vuoi una coerenza ancora più alta?
+Genera 80 immagini addizionali con variazioni di pose, outfit e illuminazione: ti permetteranno di addestrare un LoRA avanzato e definitivo del tuo talent.
+
+D) Produzione del LoRA finale
+Con 40 portrait coerenti e 80 pose/outfit — seguendo le indicazioni del documento Character Consistency Engineering — PortraitMaster Method — sei pronto per il training del tuo LoRA definitivo.
+
+Ultima fase — Outfit Injection (avanzato)
+Un punto fondamentale: l’AI non replicherà mai fedelmente un outfit partendo da una singola immagine.
+Per ottenere un risultato fotorealistico e preciso sul capo di abbigliamento:
+
+Crea un LoRA dedicato all’outfit.
+
+Usa Flux1dev Fill o ACE++ per forzare il fitting del vestito nel flusso di generazione.
+
+Trucco: per il LoRA dell’outfit, usa sempre un crop sull’indossato — aiuterà il modello a comprendere il fitting e la struttura del capo.

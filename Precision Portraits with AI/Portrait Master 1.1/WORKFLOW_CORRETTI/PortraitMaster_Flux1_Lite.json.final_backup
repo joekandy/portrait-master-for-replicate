@@ -145,7 +145,7 @@
     },
     {
       "id": 299,
-      "type": "Note",
+      "type": "AddFilmGrain",
       "pos": [
         7904.205078125,
         1134.54345703125
@@ -157,20 +157,36 @@
       "flags": {},
       "order": 173,
       "mode": 0,
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 498
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "image",
+          "links": [
+            499
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle",
         "ver": "1.0.90",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "AddFilmGrain",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: AddFilmGrain"
+        0.2,
+        0.4,
+        0.75
       ],
       "color": "#000011",
       "bgcolor": "#0b092a",
-      "class_type": "Note"
+      "class_type": "AddFilmGrain"
     },
     {
       "id": 293,
@@ -2033,7 +2049,7 @@
     },
     {
       "id": 327,
-      "type": "Note",
+      "type": "FreeMemory",
       "pos": [
         945.0587768554688,
         1068.4639892578125
@@ -2045,20 +2061,27 @@
       "flags": {},
       "order": 109,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "name": "anything",
+          "type": "*",
+          "link": 534
+        }
+      ],
       "outputs": [],
       "properties": {
         "cnr_id": "comfyui_layerstyle",
         "ver": "1.0.90",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "FreeMemory",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: FreeMemory"
+        "vram",
+        true
       ],
       "color": "#e68900",
       "bgcolor": "#ffa200",
-      "class_type": "Note"
+      "class_type": "FreeMemory"
     },
     {
       "id": 376,
@@ -4473,7 +4496,7 @@
     },
     {
       "id": 685,
-      "type": "Note",
+      "type": "FreeMemory",
       "pos": [
         1669.380859375,
         1355.430908203125
@@ -4487,20 +4510,27 @@
       },
       "order": 203,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "name": "anything",
+          "type": "*",
+          "link": 937
+        }
+      ],
       "outputs": [],
       "properties": {
         "cnr_id": "comfyui_layerstyle",
         "ver": "1.0.90",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "FreeMemory",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: FreeMemory"
+        "vram",
+        true
       ],
       "color": "#e6a200",
       "bgcolor": "#ffbb00",
-      "class_type": "Note"
+      "class_type": "FreeMemory"
     },
     {
       "id": 761,
@@ -6747,7 +6777,7 @@
     },
     {
       "id": 288,
-      "type": "Note",
+      "type": "ImageBrightnessContrast+",
       "pos": [
         8215.8134765625,
         1136.160888671875
@@ -6759,20 +6789,35 @@
       "flags": {},
       "order": 190,
       "mode": 0,
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 500
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "image",
+          "links": [
+            487
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle",
         "ver": "1.0.90",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "ImageBrightnessContrast+",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: ImageBrightnessContrast+"
+        1.0,
+        1.0
       ],
       "color": "#000011",
       "bgcolor": "#0b092a",
-      "class_type": "Note"
+      "class_type": "ImageBrightnessContrast+"
     },
     {
       "id": 767,
@@ -8426,7 +8471,7 @@
     },
     {
       "id": 782,
-      "type": "Note",
+      "type": "LoadImageFromUrl",
       "pos": [
         4110.38037109375,
         1132.5364990234375
@@ -8439,19 +8484,27 @@
       "order": 72,
       "mode": 0,
       "inputs": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "name": "joycaption_beta1_model",
+          "type": "JOYCAPTIONBETA1_MODEL",
+          "links": [
+            1029
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle_advance",
         "ver": "0f9184100e626e3202568a7cf890b3b92685a168",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "LoadImageFromUrl",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: LoadImageFromUrl"
+        ""
       ],
       "color": "#001709",
       "bgcolor": "#033022",
-      "class_type": "Note"
+      "class_type": "LoadImageFromUrl"
     },
     {
       "id": 783,
@@ -8492,7 +8545,7 @@
     },
     {
       "id": 784,
-      "type": "Note",
+      "type": "WAS Image Interrogator",
       "pos": [
         4110.70556640625,
         1295.2513427734375
@@ -8504,20 +8557,51 @@
       "flags": {},
       "order": 133,
       "mode": 0,
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1034
+        },
+        {
+          "name": "joycaption_beta1_model",
+          "type": "JOYCAPTIONBETA1_MODEL",
+          "link": 1029
+        },
+        {
+          "name": "extra_options",
+          "shape": 7,
+          "type": "JoyCaption2ExtraOption",
+          "link": 1030
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": [
+            1031,
+            1040
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle_advance",
         "ver": "0f9184100e626e3202568a7cf890b3b92685a168",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "WAS Image Interrogator",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: WAS Image Interrogator"
+        "ViT-L-14/openai",
+        "best",
+        "fast",
+        76,
+        false
       ],
       "color": "#001709",
       "bgcolor": "#033022",
-      "class_type": "Note"
+      "class_type": "WAS Image Interrogator"
     },
     {
       "id": 787,
@@ -8852,7 +8936,7 @@
     },
     {
       "id": 287,
-      "type": "Note",
+      "type": "ColorCorrect",
       "pos": [
         8595.083984375,
         1128.1279296875
@@ -8864,20 +8948,42 @@
       "flags": {},
       "order": 194,
       "mode": 0,
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 488
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "image",
+          "links": [
+            489,
+            1026
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle",
         "ver": "1.0.90",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "ColorCorrect",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: ColorCorrect"
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
       ],
       "color": "#000011",
       "bgcolor": "#0b092a",
-      "class_type": "Note"
+      "class_type": "ColorCorrect"
     },
     {
       "id": 507,
@@ -9996,7 +10102,7 @@
     },
     {
       "id": 289,
-      "type": "Note",
+      "type": "ImageExposure+",
       "pos": [
         7610.63427734375,
         1152.1229248046875
@@ -10008,20 +10114,34 @@
       "flags": {},
       "order": 134,
       "mode": 0,
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 531
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "image",
+          "links": [
+            483
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle",
         "ver": "1.0.90",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "ImageExposure+",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: ImageExposure+"
+        0.0
       ],
       "color": "#000011",
       "bgcolor": "#0b092a",
-      "class_type": "Note"
+      "class_type": "ImageExposure+"
     },
     {
       "id": 610,

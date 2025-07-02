@@ -1,0 +1,74 @@
+# Git
+.git/
+.gitignore
+
+# Backup e temp
+backup_temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Logs
+*.log
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# Test files
+test_*
+*_test.*
+
+# Old scripts
+DOWNLOAD_*.sh
+INSTALL_*.sh
+RUNPOD_*.sh
+FIX_*.sh
+COMFYUI_*.sh
+QUICK_*.sh
+PORTRAIT_MASTER_*.sh
+COPY_*.sh
+PREPARE_*.sh
+*.bat
+fix_*.py
+bypass_*.py
+VERIFICA_*.py
+
+# Old configs
+*.md.old
+STATO_*.md
+WORKFLOW_*.md
+TEST_*.md
+ISTRUZIONI_*.md
+COME_*.txt
+portrait-master-replicate.txt
+
+# Old JSON workflows (keeping only essential ones)
+PortraitMaster_*.json
+flux_portrait_simple*.json
+flux_test_*.json
+verifica_*.json
+workflow_*.json
+!workflows/
+
+# Directories not needed
+__MACOSX/
+.specstory/
+"Precision Portraits with AI/" 

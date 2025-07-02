@@ -47,8 +47,7 @@
         "widget_ue_connectable": {}
       },
       "color": "#000011",
-      "bgcolor": "#0b092a",
-      "class_type": "Fast Bypasser (rgthree)"
+      "bgcolor": "#0b092a"
     },
     {
       "id": 300,
@@ -93,8 +92,7 @@
         "widget_ue_connectable": {}
       },
       "color": "#000011",
-      "bgcolor": "#0b092a",
-      "class_type": "Fast Bypasser (rgthree)"
+      "bgcolor": "#0b092a"
     },
     {
       "id": 294,
@@ -140,12 +138,11 @@
         "widget_ue_connectable": {}
       },
       "color": "#000011",
-      "bgcolor": "#0b092a",
-      "class_type": "Fast Bypasser (rgthree)"
+      "bgcolor": "#0b092a"
     },
     {
       "id": 299,
-      "type": "Note",
+      "type": "AddFilmGrain",
       "pos": [
         17343.0078125,
         1166.7047119140625
@@ -157,20 +154,35 @@
       "flags": {},
       "order": 212,
       "mode": 0,
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 498
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "image",
+          "links": [
+            499
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle",
         "ver": "1.0.90",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "AddFilmGrain",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: AddFilmGrain"
+        0.2,
+        0.4,
+        0.75
       ],
       "color": "#000011",
-      "bgcolor": "#0b092a",
-      "class_type": "Note"
+      "bgcolor": "#0b092a"
     },
     {
       "id": 293,
@@ -216,8 +228,7 @@
         "widget_ue_connectable": {}
       },
       "color": "#000011",
-      "bgcolor": "#0b092a",
-      "class_type": "Fast Bypasser (rgthree)"
+      "bgcolor": "#0b092a"
     },
     {
       "id": 278,
@@ -259,8 +270,7 @@
       },
       "widgets_values": [],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "DifferentialDiffusion"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 330,
@@ -301,8 +311,7 @@
         "clip"
       ],
       "color": "#432",
-      "bgcolor": "#653",
-      "class_type": "SetNode"
+      "bgcolor": "#653"
     },
     {
       "id": 123,
@@ -343,8 +352,7 @@
         "default"
       ],
       "color": "#901919",
-      "bgcolor": "#a93232",
-      "class_type": "DualCLIPLoader"
+      "bgcolor": "#a93232"
     },
     {
       "id": 329,
@@ -380,8 +388,7 @@
         "clip"
       ],
       "color": "#432",
-      "bgcolor": "#653",
-      "class_type": "GetNode"
+      "bgcolor": "#653"
     },
     {
       "id": 313,
@@ -423,8 +430,7 @@
       },
       "widgets_values": [],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "ConditioningZeroOut"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 304,
@@ -460,8 +466,7 @@
         "vae"
       ],
       "color": "#322",
-      "bgcolor": "#533",
-      "class_type": "GetNode"
+      "bgcolor": "#533"
     },
     {
       "id": 284,
@@ -521,8 +526,7 @@
       },
       "widgets_values": [],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "GetImageSizeAndCount"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 305,
@@ -558,8 +562,7 @@
         "vae"
       ],
       "color": "#322",
-      "bgcolor": "#533",
-      "class_type": "GetNode"
+      "bgcolor": "#533"
     },
     {
       "id": 332,
@@ -604,8 +607,7 @@
         "perfect round chin"
       ],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "CLIPTextEncode"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 108,
@@ -643,8 +645,7 @@
         "ae.sft"
       ],
       "color": "#901919",
-      "bgcolor": "#a93232",
-      "class_type": "VAELoader"
+      "bgcolor": "#a93232"
     },
     {
       "id": 380,
@@ -685,8 +686,7 @@
         "reduxstylemodel"
       ],
       "color": "#901919",
-      "bgcolor": "#a93232",
-      "class_type": "SetNode"
+      "bgcolor": "#a93232"
     },
     {
       "id": 378,
@@ -727,8 +727,7 @@
         "reduxclipvision"
       ],
       "color": "#901919",
-      "bgcolor": "#a93232",
-      "class_type": "SetNode"
+      "bgcolor": "#a93232"
     },
     {
       "id": 203,
@@ -778,8 +777,7 @@
         "euler"
       ],
       "color": "#e64d00",
-      "bgcolor": "#ff6600",
-      "class_type": "KSamplerSelect"
+      "bgcolor": "#ff6600"
     },
     {
       "id": 513,
@@ -816,8 +814,7 @@
         "sampler"
       ],
       "color": "#614a4a",
-      "bgcolor": "#3b2c2c",
-      "class_type": "GetNode"
+      "bgcolor": "#3b2c2c"
     },
     {
       "id": 526,
@@ -858,8 +855,7 @@
         "heightbase"
       ],
       "color": "#1b4669",
-      "bgcolor": "#29699c",
-      "class_type": "SetNode"
+      "bgcolor": "#29699c"
     },
     {
       "id": 527,
@@ -900,8 +896,7 @@
         "latentbase"
       ],
       "color": "#323",
-      "bgcolor": "#535",
-      "class_type": "SetNode"
+      "bgcolor": "#535"
     },
     {
       "id": 309,
@@ -942,8 +937,7 @@
         "positive"
       ],
       "color": "#332922",
-      "bgcolor": "#593930",
-      "class_type": "SetNode"
+      "bgcolor": "#593930"
     },
     {
       "id": 508,
@@ -980,8 +974,7 @@
         "detaildemon"
       ],
       "color": "#e68900",
-      "bgcolor": "#ffa200",
-      "class_type": "GetNode"
+      "bgcolor": "#ffa200"
     },
     {
       "id": 529,
@@ -1022,8 +1015,7 @@
         "conditioning"
       ],
       "color": "#332922",
-      "bgcolor": "#593930",
-      "class_type": "GetNode"
+      "bgcolor": "#593930"
     },
     {
       "id": 532,
@@ -1063,8 +1055,7 @@
         "model"
       ],
       "color": "#223",
-      "bgcolor": "#335",
-      "class_type": "GetNode"
+      "bgcolor": "#335"
     },
     {
       "id": 533,
@@ -1122,8 +1113,7 @@
       },
       "widgets_values": [],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "ConditioningZeroOut"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 534,
@@ -1175,8 +1165,7 @@
         1
       ],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "SimpleMathInt+"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 535,
@@ -1217,8 +1206,7 @@
         "Moduleactive_adetailer"
       ],
       "color": "#1b4669",
-      "bgcolor": "#29699c",
-      "class_type": "SetNode"
+      "bgcolor": "#29699c"
     },
     {
       "id": 540,
@@ -1278,8 +1266,7 @@
         "bbox/face_yolov8m.pt"
       ],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "UltralyticsDetectorProvider"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 542,
@@ -1334,8 +1321,7 @@
         "AUTO"
       ],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "SAMLoader"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 543,
@@ -1395,8 +1381,7 @@
         "bbox/Eyeful_v2-Paired.pt"
       ],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "UltralyticsDetectorProvider"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 545,
@@ -1437,8 +1422,7 @@
         "image_adetailer"
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159",
-      "class_type": "SetNode"
+      "bgcolor": "#3f5159"
     },
     {
       "id": 546,
@@ -1474,8 +1458,7 @@
         "ComfyUI"
       ],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "SaveImage"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 547,
@@ -1507,8 +1490,7 @@
       },
       "widgets_values": [],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "PreviewImage"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 548,
@@ -1540,8 +1522,7 @@
       },
       "widgets_values": [],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "PreviewImage"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 549,
@@ -1573,8 +1554,7 @@
       },
       "widgets_values": [],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "PreviewImage"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 550,
@@ -1606,8 +1586,7 @@
       },
       "widgets_values": [],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "PreviewImage"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 551,
@@ -1644,8 +1623,7 @@
         "image_latentinjection"
       ],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "GetNode"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 555,
@@ -1799,8 +1777,7 @@
         false
       ],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "FaceDetailer"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 556,
@@ -1954,8 +1931,7 @@
         false
       ],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "FaceDetailer"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 576,
@@ -1992,8 +1968,7 @@
         "vae"
       ],
       "color": "#322",
-      "bgcolor": "#533",
-      "class_type": "GetNode"
+      "bgcolor": "#533"
     },
     {
       "id": 591,
@@ -2036,8 +2011,7 @@
       },
       "widgets_values": [],
       "color": "#001829",
-      "bgcolor": "#143142",
-      "class_type": "ConditioningZeroOut"
+      "bgcolor": "#143142"
     },
     {
       "id": 592,
@@ -2082,8 +2056,7 @@
         ""
       ],
       "color": "#001829",
-      "bgcolor": "#143142",
-      "class_type": "CLIPTextEncode"
+      "bgcolor": "#143142"
     },
     {
       "id": 598,
@@ -2117,8 +2090,7 @@
         "upscaler con prompt"
       ],
       "color": "#002a1e",
-      "bgcolor": "#0e4337",
-      "class_type": "SaveImage"
+      "bgcolor": "#0e4337"
     },
     {
       "id": 611,
@@ -2159,8 +2131,7 @@
         "image_upscaled_module_daemon"
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159",
-      "class_type": "SetNode"
+      "bgcolor": "#3f5159"
     },
     {
       "id": 620,
@@ -2206,8 +2177,7 @@
         "4xFaceUpDAT.pth"
       ],
       "color": "#001829",
-      "bgcolor": "#143142",
-      "class_type": "UpscaleModelLoader"
+      "bgcolor": "#143142"
     },
     {
       "id": 616,
@@ -2253,8 +2223,7 @@
         "4xFaceUpSharpDAT.pth"
       ],
       "color": "#002a1e",
-      "bgcolor": "#0e4337",
-      "class_type": "UpscaleModelLoader"
+      "bgcolor": "#0e4337"
     },
     {
       "id": 539,
@@ -2314,8 +2283,7 @@
         "bbox/hand_yolov8s.pt"
       ],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "UltralyticsDetectorProvider"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 530,
@@ -2355,8 +2323,7 @@
         "clip"
       ],
       "color": "#432",
-      "bgcolor": "#653",
-      "class_type": "GetNode"
+      "bgcolor": "#653"
     },
     {
       "id": 531,
@@ -2396,8 +2363,7 @@
         "vae"
       ],
       "color": "#322",
-      "bgcolor": "#533",
-      "class_type": "GetNode"
+      "bgcolor": "#533"
     },
     {
       "id": 596,
@@ -2435,8 +2401,7 @@
         "model_lora"
       ],
       "color": "#223",
-      "bgcolor": "#335",
-      "class_type": "GetNode"
+      "bgcolor": "#335"
     },
     {
       "id": 595,
@@ -2473,8 +2438,7 @@
         "vae"
       ],
       "color": "#322",
-      "bgcolor": "#533",
-      "class_type": "GetNode"
+      "bgcolor": "#533"
     },
     {
       "id": 621,
@@ -2526,8 +2490,7 @@
         ]
       ],
       "color": "#002a1e",
-      "bgcolor": "#0e4337",
-      "class_type": "Image Comparer (rgthree)"
+      "bgcolor": "#0e4337"
     },
     {
       "id": 575,
@@ -2573,8 +2536,7 @@
         "euler"
       ],
       "color": "#002a1e",
-      "bgcolor": "#0e4337",
-      "class_type": "KSamplerSelect"
+      "bgcolor": "#0e4337"
     },
     {
       "id": 638,
@@ -2611,8 +2573,7 @@
         "heightbase"
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "GetNode"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 661,
@@ -2649,8 +2610,7 @@
         "latentupscale"
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "GetNode"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 642,
@@ -2687,8 +2647,7 @@
         "widthbase"
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "GetNode"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 658,
@@ -2765,8 +2724,7 @@
         "a+c*(b-a)"
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "SimpleMath+"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 624,
@@ -2829,8 +2787,7 @@
         "fixed"
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "RandomNoise"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 626,
@@ -2867,8 +2824,7 @@
         "seed_other"
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "GetNode"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 633,
@@ -2905,8 +2861,7 @@
         "latentsharpen"
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "GetNode"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 625,
@@ -2985,8 +2940,7 @@
         0
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "LatentCrop"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 632,
@@ -3038,8 +2992,7 @@
         1
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "SimpleMathInt+"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 197,
@@ -3077,8 +3030,7 @@
         "fp8_e4m3fn_fast"
       ],
       "color": "#901919",
-      "bgcolor": "#a93232",
-      "class_type": "UNETLoader"
+      "bgcolor": "#a93232"
     },
     {
       "id": 354,
@@ -3119,8 +3071,7 @@
         "model"
       ],
       "color": "#223",
-      "bgcolor": "#335",
-      "class_type": "SetNode"
+      "bgcolor": "#335"
     },
     {
       "id": 381,
@@ -3169,8 +3120,7 @@
         "flux1-redux-dev.safetensors"
       ],
       "color": "#901919",
-      "bgcolor": "#a93232",
-      "class_type": "StyleModelLoader"
+      "bgcolor": "#a93232"
     },
     {
       "id": 379,
@@ -3219,8 +3169,7 @@
         "sigclip_vision_patch14_384.safetensors"
       ],
       "color": "#901919",
-      "bgcolor": "#a93232",
-      "class_type": "CLIPVisionLoader"
+      "bgcolor": "#a93232"
     },
     {
       "id": 301,
@@ -3261,8 +3210,7 @@
         "vae"
       ],
       "color": "#322",
-      "bgcolor": "#533",
-      "class_type": "SetNode"
+      "bgcolor": "#533"
     },
     {
       "id": 353,
@@ -3309,8 +3257,7 @@
         0
       ],
       "color": "#901919",
-      "bgcolor": "#a93232",
-      "class_type": "ApplyFBCacheOnModel"
+      "bgcolor": "#a93232"
     },
     {
       "id": 356,
@@ -3346,8 +3293,7 @@
         "model"
       ],
       "color": "#223",
-      "bgcolor": "#335",
-      "class_type": "GetNode"
+      "bgcolor": "#335"
     },
     {
       "id": 331,
@@ -3383,8 +3329,7 @@
         "clip"
       ],
       "color": "#432",
-      "bgcolor": "#653",
-      "class_type": "GetNode"
+      "bgcolor": "#653"
     },
     {
       "id": 306,
@@ -3425,8 +3370,7 @@
         "model_lora"
       ],
       "color": "#223",
-      "bgcolor": "#335",
-      "class_type": "SetNode"
+      "bgcolor": "#335"
     },
     {
       "id": 390,
@@ -3467,8 +3411,7 @@
         "conditioning"
       ],
       "color": "#332922",
-      "bgcolor": "#593930",
-      "class_type": "SetNode"
+      "bgcolor": "#593930"
     },
     {
       "id": 525,
@@ -3509,8 +3452,7 @@
         "widthbase"
       ],
       "color": "#1b4669",
-      "bgcolor": "#29699c",
-      "class_type": "SetNode"
+      "bgcolor": "#29699c"
     },
     {
       "id": 237,
@@ -3546,8 +3488,7 @@
         "euler"
       ],
       "color": "#e64d00",
-      "bgcolor": "#ff6600",
-      "class_type": "Sampler Selector"
+      "bgcolor": "#ff6600"
     },
     {
       "id": 307,
@@ -3583,8 +3524,7 @@
         "model_lora"
       ],
       "color": "#223",
-      "bgcolor": "#335",
-      "class_type": "GetNode"
+      "bgcolor": "#335"
     },
     {
       "id": 194,
@@ -3632,8 +3572,7 @@
       },
       "widgets_values": [],
       "color": "#e68900",
-      "bgcolor": "#ffa200",
-      "class_type": "BasicGuider"
+      "bgcolor": "#ffa200"
     },
     {
       "id": 193,
@@ -3703,12 +3642,11 @@
       },
       "widgets_values": [],
       "color": "#e68900",
-      "bgcolor": "#ffa200",
-      "class_type": "SamplerCustomAdvanced"
+      "bgcolor": "#ffa200"
     },
     {
       "id": 327,
-      "type": "Note",
+      "type": "FreeMemory",
       "pos": [
         945.0587768554688,
         1068.4639892578125
@@ -3720,20 +3658,26 @@
       "flags": {},
       "order": 139,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "name": "anything",
+          "type": "*",
+          "link": 534
+        }
+      ],
       "outputs": [],
       "properties": {
         "cnr_id": "comfyui_layerstyle",
         "ver": "1.0.90",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "FreeMemory",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: FreeMemory"
+        "vram",
+        true
       ],
       "color": "#e68900",
-      "bgcolor": "#ffa200",
-      "class_type": "Note"
+      "bgcolor": "#ffa200"
     },
     {
       "id": 376,
@@ -3774,8 +3718,7 @@
         "image_redux_1"
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159",
-      "class_type": "SetNode"
+      "bgcolor": "#3f5159"
     },
     {
       "id": 384,
@@ -3816,8 +3759,7 @@
         "image_redux_2"
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159",
-      "class_type": "SetNode"
+      "bgcolor": "#3f5159"
     },
     {
       "id": 358,
@@ -3887,8 +3829,7 @@
         "a*1"
       ],
       "color": "#e60000",
-      "bgcolor": "#ff0000",
-      "class_type": "MathExpression|pysssss"
+      "bgcolor": "#ff0000"
     },
     {
       "id": 359,
@@ -3929,8 +3870,7 @@
         "reduxstrengthimg1"
       ],
       "color": "#232",
-      "bgcolor": "#353",
-      "class_type": "SetNode"
+      "bgcolor": "#353"
     },
     {
       "id": 388,
@@ -3971,8 +3911,7 @@
         "reduxstrengthimg2"
       ],
       "color": "#232",
-      "bgcolor": "#353",
-      "class_type": "SetNode"
+      "bgcolor": "#353"
     },
     {
       "id": 387,
@@ -4042,8 +3981,7 @@
         "a*1"
       ],
       "color": "#e60000",
-      "bgcolor": "#ff0000",
-      "class_type": "MathExpression|pysssss"
+      "bgcolor": "#ff0000"
     },
     {
       "id": 360,
@@ -4080,8 +4018,7 @@
         "reduxclipvision"
       ],
       "color": "#901919",
-      "bgcolor": "#a93232",
-      "class_type": "GetNode"
+      "bgcolor": "#a93232"
     },
     {
       "id": 361,
@@ -4118,8 +4055,7 @@
         "image_redux_2"
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159",
-      "class_type": "GetNode"
+      "bgcolor": "#3f5159"
     },
     {
       "id": 368,
@@ -4156,8 +4092,7 @@
         "reduxstylemodel"
       ],
       "color": "#901919",
-      "bgcolor": "#a93232",
-      "class_type": "GetNode"
+      "bgcolor": "#a93232"
     },
     {
       "id": 374,
@@ -4234,8 +4169,7 @@
         0.106
       ],
       "color": "#901919",
-      "bgcolor": "#a93232",
-      "class_type": "StyleModelApplyAdvanced"
+      "bgcolor": "#a93232"
     },
     {
       "id": 367,
@@ -4272,8 +4206,7 @@
         "reduxstrengthimg2"
       ],
       "color": "#901919",
-      "bgcolor": "#a93232",
-      "class_type": "GetNode"
+      "bgcolor": "#a93232"
     },
     {
       "id": 363,
@@ -4310,8 +4243,7 @@
         "reduxclipvision"
       ],
       "color": "#901919",
-      "bgcolor": "#a93232",
-      "class_type": "GetNode"
+      "bgcolor": "#a93232"
     },
     {
       "id": 362,
@@ -4373,8 +4305,7 @@
         "none"
       ],
       "color": "#901919",
-      "bgcolor": "#a93232",
-      "class_type": "CLIPVisionEncode"
+      "bgcolor": "#a93232"
     },
     {
       "id": 364,
@@ -4411,8 +4342,7 @@
         "image_redux_1"
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159",
-      "class_type": "GetNode"
+      "bgcolor": "#3f5159"
     },
     {
       "id": 371,
@@ -4449,8 +4379,7 @@
         "reduxstrengthimg1"
       ],
       "color": "#232",
-      "bgcolor": "#353",
-      "class_type": "GetNode"
+      "bgcolor": "#353"
     },
     {
       "id": 370,
@@ -4487,8 +4416,7 @@
         "reduxstylemodel"
       ],
       "color": "#901919",
-      "bgcolor": "#a93232",
-      "class_type": "GetNode"
+      "bgcolor": "#a93232"
     },
     {
       "id": 372,
@@ -4565,8 +4493,7 @@
         0.106
       ],
       "color": "#901919",
-      "bgcolor": "#a93232",
-      "class_type": "StyleModelApplyAdvanced"
+      "bgcolor": "#a93232"
     },
     {
       "id": 365,
@@ -4628,8 +4555,7 @@
         "none"
       ],
       "color": "#901919",
-      "bgcolor": "#a93232",
-      "class_type": "CLIPVisionEncode"
+      "bgcolor": "#a93232"
     },
     {
       "id": 383,
@@ -4672,8 +4598,7 @@
         "image"
       ],
       "color": "#e60000",
-      "bgcolor": "#ff0000",
-      "class_type": "LoadImage"
+      "bgcolor": "#ff0000"
     },
     {
       "id": 502,
@@ -4743,8 +4668,7 @@
         "a*1"
       ],
       "color": "#e61a00",
-      "bgcolor": "#ff3300",
-      "class_type": "MathExpression|pysssss"
+      "bgcolor": "#ff3300"
     },
     {
       "id": 503,
@@ -4785,8 +4709,7 @@
         "detaildemon"
       ],
       "color": "#232",
-      "bgcolor": "#353",
-      "class_type": "SetNode"
+      "bgcolor": "#353"
     },
     {
       "id": 505,
@@ -4856,8 +4779,7 @@
         "a*1"
       ],
       "color": "#e61a00",
-      "bgcolor": "#ff3300",
-      "class_type": "MathExpression|pysssss"
+      "bgcolor": "#ff3300"
     },
     {
       "id": 506,
@@ -4898,8 +4820,7 @@
         "AdvLyingSigma"
       ],
       "color": "#232",
-      "bgcolor": "#353",
-      "class_type": "SetNode"
+      "bgcolor": "#353"
     },
     {
       "id": 524,
@@ -4963,8 +4884,7 @@
         1024
       ],
       "color": "#e63400",
-      "bgcolor": "#ff4d00",
-      "class_type": "SDXLEmptyLatentSizePicker+"
+      "bgcolor": "#ff4d00"
     },
     {
       "id": 662,
@@ -5001,8 +4921,7 @@
         "reduxconditioning"
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "GetNode"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 627,
@@ -5040,8 +4959,7 @@
         "sampler"
       ],
       "color": "#614a4a",
-      "bgcolor": "#3b2c2c",
-      "class_type": "GetNode"
+      "bgcolor": "#3b2c2c"
     },
     {
       "id": 635,
@@ -5102,8 +5020,7 @@
       },
       "widgets_values": [],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "BasicGuider"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 631,
@@ -5140,8 +5057,7 @@
         "model_lora"
       ],
       "color": "#223",
-      "bgcolor": "#335",
-      "class_type": "GetNode"
+      "bgcolor": "#335"
     },
     {
       "id": 760,
@@ -5184,8 +5100,7 @@
         null
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "Seed (rgthree)"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 757,
@@ -5222,8 +5137,7 @@
         "denoisedoutput_normal"
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "GetNode"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 649,
@@ -5302,8 +5216,7 @@
         "disabled"
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "LatentUpscale"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 640,
@@ -5341,8 +5254,7 @@
         "latentroughsmooth"
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "GetNode"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 639,
@@ -5379,8 +5291,7 @@
         "latentspeed"
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "GetNode"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 654,
@@ -5417,8 +5328,7 @@
         "latentfluxguidance"
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "GetNode"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 641,
@@ -5455,8 +5365,7 @@
         "latentdenoise"
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "GetNode"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 636,
@@ -5537,8 +5446,7 @@
         1024
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "ModelSamplingFlux"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 637,
@@ -5579,8 +5487,7 @@
         "Moduleactive_latent"
       ],
       "color": "#1b4669",
-      "bgcolor": "#29699c",
-      "class_type": "SetNode"
+      "bgcolor": "#29699c"
     },
     {
       "id": 630,
@@ -5657,8 +5564,7 @@
         "true"
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "InjectLatentNoise+"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 629,
@@ -5718,8 +5624,7 @@
       },
       "widgets_values": [],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "VAEDecode"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 628,
@@ -5756,8 +5661,7 @@
         "vae"
       ],
       "color": "#322",
-      "bgcolor": "#533",
-      "class_type": "GetNode"
+      "bgcolor": "#533"
     },
     {
       "id": 647,
@@ -5844,8 +5748,7 @@
         1
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "BasicScheduler"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 648,
@@ -5887,8 +5790,7 @@
         ""
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "PrimitiveNode"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 650,
@@ -5924,8 +5826,7 @@
         "Latent"
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "SaveImage"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 656,
@@ -6000,8 +5901,7 @@
         0.45
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "SplitSigmasDenoise"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 660,
@@ -6101,8 +6001,7 @@
         "b*c"
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "SimpleMathDual+"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 651,
@@ -6143,12 +6042,11 @@
         "image_latentinjection"
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159",
-      "class_type": "SetNode"
+      "bgcolor": "#3f5159"
     },
     {
       "id": 685,
-      "type": "Note",
+      "type": "FreeMemory",
       "pos": [
         1669.380859375,
         1355.430908203125
@@ -6162,20 +6060,26 @@
       },
       "order": 261,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "name": "anything",
+          "type": "*",
+          "link": 937
+        }
+      ],
       "outputs": [],
       "properties": {
         "cnr_id": "comfyui_layerstyle",
         "ver": "1.0.90",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "FreeMemory",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: FreeMemory"
+        "vram",
+        true
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "Note"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 761,
@@ -6216,8 +6120,7 @@
         "seed_other"
       ],
       "color": "#1b4669",
-      "bgcolor": "#29699c",
-      "class_type": "SetNode"
+      "bgcolor": "#29699c"
     },
     {
       "id": 655,
@@ -6265,8 +6168,7 @@
       },
       "widgets_values": [],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "DisableNoise"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 657,
@@ -6362,8 +6264,7 @@
         "26+(a-0.46)*(9)/0.26"
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "SimpleMathDual+"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 659,
@@ -6430,8 +6331,7 @@
         3.5
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "FluxGuidance"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 315,
@@ -6468,8 +6368,7 @@
         "image_base"
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159",
-      "class_type": "GetNode"
+      "bgcolor": "#3f5159"
     },
     {
       "id": 673,
@@ -6537,8 +6436,7 @@
       },
       "widgets_values": [
         "a*1"
-      ],
-      "class_type": "MathExpression|pysssss"
+      ]
     },
     {
       "id": 663,
@@ -6579,8 +6477,7 @@
         "latentupscale"
       ],
       "color": "#232",
-      "bgcolor": "#353",
-      "class_type": "SetNode"
+      "bgcolor": "#353"
     },
     {
       "id": 664,
@@ -6621,8 +6518,7 @@
         "latentfluxguidance"
       ],
       "color": "#232",
-      "bgcolor": "#353",
-      "class_type": "SetNode"
+      "bgcolor": "#353"
     },
     {
       "id": 672,
@@ -6690,8 +6586,7 @@
       },
       "widgets_values": [
         "a*1"
-      ],
-      "class_type": "MathExpression|pysssss"
+      ]
     },
     {
       "id": 671,
@@ -6759,8 +6654,7 @@
       },
       "widgets_values": [
         "a*1"
-      ],
-      "class_type": "MathExpression|pysssss"
+      ]
     },
     {
       "id": 666,
@@ -6801,8 +6695,7 @@
         "latentnoisestrength"
       ],
       "color": "#232",
-      "bgcolor": "#353",
-      "class_type": "SetNode"
+      "bgcolor": "#353"
     },
     {
       "id": 670,
@@ -6870,8 +6763,7 @@
       },
       "widgets_values": [
         "a*1"
-      ],
-      "class_type": "MathExpression|pysssss"
+      ]
     },
     {
       "id": 665,
@@ -6912,8 +6804,7 @@
         "latentdenoise"
       ],
       "color": "#232",
-      "bgcolor": "#353",
-      "class_type": "SetNode"
+      "bgcolor": "#353"
     },
     {
       "id": 676,
@@ -6981,8 +6872,7 @@
       },
       "widgets_values": [
         "a*1"
-      ],
-      "class_type": "MathExpression|pysssss"
+      ]
     },
     {
       "id": 674,
@@ -7050,8 +6940,7 @@
       },
       "widgets_values": [
         "a*1"
-      ],
-      "class_type": "MathExpression|pysssss"
+      ]
     },
     {
       "id": 669,
@@ -7092,8 +6981,7 @@
         "latentspeed"
       ],
       "color": "#232",
-      "bgcolor": "#353",
-      "class_type": "SetNode"
+      "bgcolor": "#353"
     },
     {
       "id": 675,
@@ -7161,8 +7049,7 @@
       },
       "widgets_values": [
         "a*1"
-      ],
-      "class_type": "MathExpression|pysssss"
+      ]
     },
     {
       "id": 668,
@@ -7203,8 +7090,7 @@
         "latentsharpen"
       ],
       "color": "#232",
-      "bgcolor": "#353",
-      "class_type": "SetNode"
+      "bgcolor": "#353"
     },
     {
       "id": 667,
@@ -7245,8 +7131,7 @@
         "latentroughsmooth"
       ],
       "color": "#232",
-      "bgcolor": "#353",
-      "class_type": "SetNode"
+      "bgcolor": "#353"
     },
     {
       "id": 557,
@@ -7283,8 +7168,7 @@
         "image_chinfix"
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159",
-      "class_type": "GetNode"
+      "bgcolor": "#3f5159"
     },
     {
       "id": 324,
@@ -7320,8 +7204,7 @@
         "image_chinfix"
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159",
-      "class_type": "GetNode"
+      "bgcolor": "#3f5159"
     },
     {
       "id": 266,
@@ -7384,8 +7267,7 @@
         1
       ],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "KSampler"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 257,
@@ -7422,8 +7304,7 @@
         "GroundingDINO_SwinT_OGC (694MB)"
       ],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "LayerMask: LoadSegmentAnythingModels"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 261,
@@ -7460,8 +7341,7 @@
         "default"
       ],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "UNETLoader"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 544,
@@ -7521,8 +7401,7 @@
         "segm/hair_yolov8n-seg_60.pt"
       ],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "UltralyticsDetectorProvider"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 515,
@@ -7563,8 +7442,7 @@
         "sampler"
       ],
       "color": "#614a4a",
-      "bgcolor": "#3b2c2c",
-      "class_type": "SetNode"
+      "bgcolor": "#3b2c2c"
     },
     {
       "id": 238,
@@ -7600,8 +7478,7 @@
         "normal"
       ],
       "color": "#e64d00",
-      "bgcolor": "#ff6600",
-      "class_type": "Scheduler Selector"
+      "bgcolor": "#ff6600"
     },
     {
       "id": 507,
@@ -7659,8 +7536,7 @@
         1
       ],
       "color": "#ab2400",
-      "bgcolor": "#c43d05",
-      "class_type": "mxSlider"
+      "bgcolor": "#c43d05"
     },
     {
       "id": 369,
@@ -7697,8 +7573,7 @@
         "conditioning"
       ],
       "color": "#332922",
-      "bgcolor": "#593930",
-      "class_type": "GetNode"
+      "bgcolor": "#593930"
     },
     {
       "id": 375,
@@ -7739,8 +7614,7 @@
         "reduxconditioning"
       ],
       "color": "#332922",
-      "bgcolor": "#593930",
-      "class_type": "SetNode"
+      "bgcolor": "#593930"
     },
     {
       "id": 232,
@@ -7772,8 +7646,7 @@
       },
       "widgets_values": [],
       "color": "#e68900",
-      "bgcolor": "#ffa200",
-      "class_type": "PreviewImage"
+      "bgcolor": "#ffa200"
     },
     {
       "id": 509,
@@ -7849,8 +7722,7 @@
         0
       ],
       "color": "#e68900",
-      "bgcolor": "#ffa200",
-      "class_type": "DetailDaemonSamplerNode"
+      "bgcolor": "#ffa200"
     },
     {
       "id": 511,
@@ -7887,8 +7759,7 @@
         "AdvLyingSigma"
       ],
       "color": "#e68900",
-      "bgcolor": "#ffa200",
-      "class_type": "GetNode"
+      "bgcolor": "#ffa200"
     },
     {
       "id": 195,
@@ -7963,8 +7834,7 @@
         1
       ],
       "color": "#e68900",
-      "bgcolor": "#ffa200",
-      "class_type": "BasicScheduler"
+      "bgcolor": "#ffa200"
     },
     {
       "id": 512,
@@ -8018,8 +7888,7 @@
         0.9
       ],
       "color": "#e68900",
-      "bgcolor": "#ffa200",
-      "class_type": "LyingSigmaSampler"
+      "bgcolor": "#ffa200"
     },
     {
       "id": 211,
@@ -8057,8 +7926,7 @@
         1
       ],
       "color": "#e64d00",
-      "bgcolor": "#ff6600",
-      "class_type": "Primitive float [Crystools]"
+      "bgcolor": "#ff6600"
     },
     {
       "id": 391,
@@ -8095,8 +7963,7 @@
         "reduxconditioning"
       ],
       "color": "#e64d00",
-      "bgcolor": "#ff6600",
-      "class_type": "GetNode"
+      "bgcolor": "#ff6600"
     },
     {
       "id": 196,
@@ -8143,8 +8010,7 @@
         1.9000000000000001
       ],
       "color": "#e64d00",
-      "bgcolor": "#ff6600",
-      "class_type": "FluxGuidance"
+      "bgcolor": "#ff6600"
     },
     {
       "id": 528,
@@ -8180,8 +8046,7 @@
         "latentbase"
       ],
       "color": "#e68900",
-      "bgcolor": "#ffa200",
-      "class_type": "GetNode"
+      "bgcolor": "#ffa200"
     },
     {
       "id": 310,
@@ -8217,8 +8082,7 @@
         "positive"
       ],
       "color": "#332922",
-      "bgcolor": "#593930",
-      "class_type": "GetNode"
+      "bgcolor": "#593930"
     },
     {
       "id": 302,
@@ -8254,8 +8118,7 @@
         "vae"
       ],
       "color": "#322",
-      "bgcolor": "#533",
-      "class_type": "GetNode"
+      "bgcolor": "#533"
     },
     {
       "id": 517,
@@ -8292,8 +8155,7 @@
         "widthbase"
       ],
       "color": "#e68900",
-      "bgcolor": "#ffa200",
-      "class_type": "GetNode"
+      "bgcolor": "#ffa200"
     },
     {
       "id": 516,
@@ -8330,8 +8192,7 @@
         "model_lora"
       ],
       "color": "#223",
-      "bgcolor": "#335",
-      "class_type": "GetNode"
+      "bgcolor": "#335"
     },
     {
       "id": 755,
@@ -8372,8 +8233,7 @@
         "denoisedoutput_normal"
       ],
       "color": "#323",
-      "bgcolor": "#535",
-      "class_type": "SetNode"
+      "bgcolor": "#535"
     },
     {
       "id": 518,
@@ -8410,8 +8270,7 @@
         "heightbase"
       ],
       "color": "#e68900",
-      "bgcolor": "#ffa200",
-      "class_type": "GetNode"
+      "bgcolor": "#ffa200"
     },
     {
       "id": 202,
@@ -8462,8 +8321,7 @@
         "randomize"
       ],
       "color": "#e68900",
-      "bgcolor": "#ffa200",
-      "class_type": "RandomNoise"
+      "bgcolor": "#ffa200"
     },
     {
       "id": 314,
@@ -8504,8 +8362,7 @@
         "image_base"
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159",
-      "class_type": "SetNode"
+      "bgcolor": "#3f5159"
     },
     {
       "id": 519,
@@ -8584,8 +8441,7 @@
         1024
       ],
       "color": "#e68900",
-      "bgcolor": "#ffa200",
-      "class_type": "ModelSamplingFlux"
+      "bgcolor": "#ffa200"
     },
     {
       "id": 764,
@@ -8619,8 +8475,7 @@
       },
       "widgets_values": [
         "Image_Base"
-      ],
-      "class_type": "SaveImage"
+      ]
     },
     {
       "id": 609,
@@ -8666,8 +8521,7 @@
         1280
       ],
       "color": "#002a1e",
-      "bgcolor": "#0e4337",
-      "class_type": "ModelSamplingFlux"
+      "bgcolor": "#0e4337"
     },
     {
       "id": 605,
@@ -8728,8 +8582,7 @@
         1
       ],
       "color": "#002a1e",
-      "bgcolor": "#0e4337",
-      "class_type": "DetailDaemonSamplerNode"
+      "bgcolor": "#0e4337"
     },
     {
       "id": 610,
@@ -8838,8 +8691,7 @@
         false
       ],
       "color": "#002a1e",
-      "bgcolor": "#0e4337",
-      "class_type": "UltimateSDUpscaleCustomSample"
+      "bgcolor": "#0e4337"
     },
     {
       "id": 259,
@@ -8902,8 +8754,7 @@
         2
       ],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "LayerMask: SegmentAnythingUltra V3"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 321,
@@ -8939,8 +8790,7 @@
         "image_latentinjection"
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159",
-      "class_type": "GetNode"
+      "bgcolor": "#3f5159"
     },
     {
       "id": 285,
@@ -8992,8 +8842,7 @@
         ]
       ],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "Image Comparer (rgthree)"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 679,
@@ -9051,8 +8900,7 @@
         1
       ],
       "color": "#222",
-      "bgcolor": "#000",
-      "class_type": "mxSlider"
+      "bgcolor": "#000"
     },
     {
       "id": 678,
@@ -9110,8 +8958,7 @@
         1
       ],
       "color": "#222",
-      "bgcolor": "#000",
-      "class_type": "mxSlider"
+      "bgcolor": "#000"
     },
     {
       "id": 504,
@@ -9169,8 +9016,7 @@
         1
       ],
       "color": "#ab2400",
-      "bgcolor": "#c43d05",
-      "class_type": "mxSlider"
+      "bgcolor": "#c43d05"
     },
     {
       "id": 771,
@@ -9195,8 +9041,7 @@
         "🧠 Prompt Assistant – Portrait Flux.1 GPT\n🔗 Portrait Flux.1 GPT – Generate Character \nhttps://chatgpt.com/g/g-67e2fa234e388191bec4e06357fc1275-portrait-flux-1\n\nDescriptions & Prompts\n\n🎯 Purpose\nThis custom GPT is designed to generate detailed prompts and physical descriptions for creating realistic AI-generated portraits in ComfyUI. It is especially useful for workflows involving Flux.1, LoRA training, or any context where character consistency is critical.\n\n⚙️ Key Features\nStructured character design:\nGenerate consistent facial descriptions including:\n\nFace shape, bone structure, skin texture\n\nEye shape and color, nose, lips, jawline\n\nHairstyle, volume, length, and color\n\nExpression and gaze direction\n\nPhotographic realism vocabulary:\nTailored for diffusion models with phrasing optimized for ComfyUI, SD1.5/XL, and Flux.1 pipelines\n\nMultiple output modes:\n\nStandard description for prompting\n\nTechnical breakdown for precise visual replication\n\nAdd-on style and lighting variants\n\n✅ Integration in Your Workflow\nWhen generating a new character portrait, always start with this GPT to define:\n\nWho the model is (gender, ethnicity-neutral, or custom)\n\nVisual traits and desired aesthetics\n\nSpecial features (e.g. freckles, almond eyes, square jaw)\n\nCopy and paste the generated prompt into the CLIP Text Encode node inside your ComfyUI workflow.\n\n🔄 Redux as a Generation Guide\nIf you use the Redux node as guidance in your generation pipeline (e.g., via Guide (Redux) or ReduxConditioning), this GPT becomes even more powerful.\n\nThe character description it generates will be used in combination with Redux’s persistent guidance system, ensuring that:\n\nIdentity and facial structure are preserved across generations\n\nThe subject is rendered consistently in different poses, angles, or lighting setups\n\nPrompt conditioning remains anchored by Redux’s latent control logic"
       ],
       "color": "#432",
-      "bgcolor": "#653",
-      "class_type": "Note"
+      "bgcolor": "#653"
     },
     {
       "id": 553,
@@ -9350,8 +9195,7 @@
         false
       ],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "FaceDetailer"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 772,
@@ -9376,8 +9220,7 @@
         "1. Flux Skin Texture\n🔗 https://civitai.com/models/651043/flux-skin-texture\n\nDescription:\nDesigned to enhance skin texture in portrait generation, this LoRA emphasizes fine details like pores and micro-imperfections while maintaining a natural and coherent look.\n\nTrigger words: flux skin texture\n\n2. Photorealistic Skin (No Plastic) – Flux\n🔗 https://civitai.com/models/1157318/photorealistic-skin-no-plastic-flux\n\nDescription:\nFocused on achieving realistic skin rendering without the typical “plastic” effect, this model is ideal for close-up shots and workflows using Flux1, preserving organic lighting and surface fidelity.\n\nTrigger words: photorealistic skin\n\n3. Skin Tone Glamour Photography Style – Human Skin Color XL F1D SD15 Pony Illu\n🔗 https://civitai.com/models/562884/skin-tone-glamour-photography-style-human-skin-color-xl-f1d-sd15-pony-illu\n\nDescription:\nOptimized for editorial-style portraits, this LoRA provides a well-balanced variety of natural skin tones, ideal for glamour shots with soft lighting and clean photographic mood.\n\nTrigger words: glamour skin tone\n\n4. Female Face Portraits – Detailed Skin Closeup Macro Flux\n🔗 https://civitai.com/models/1019792/female-face-portraits-detailed-skin-closeup-macro-flux\n\nDescription:\nSpecialized in macro close-ups of female faces, this LoRA enhances pores, eyelashes, skin reflections, and other micro-details with high precision—perfect for ultra-detailed, high-res portraits.\n\nTrigger words: macro female portrait\n\n5. Luscious Lips and Detailed Faces\n🔗 https://civitai.com/models/951276/luscious-lips-and-detailed-faces\n\nDescription:\nFocused on voluminous lips and facial detail enhancement, this LoRA improves the realism and structure of the lips and facial symmetry, making it ideal for fashion and beauty visuals.\n\nTrigger words: luscious lips\n\n6. ESC Makeup\n🔗 https://civitai.com/models/1060990/esc-makeup\n\nDescription:\nThis LoRA adds realistic and photogenic makeup effects, subtly enhancing eye shadows, skin glow, lip tone, and overall facial aesthetics without over-processing.\n\nTrigger words: ESC makeup\n\n"
       ],
       "color": "#432",
-      "bgcolor": "#653",
-      "class_type": "Note"
+      "bgcolor": "#653"
     },
     {
       "id": 325,
@@ -9413,12 +9256,11 @@
         "image_upscaled_1"
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159",
-      "class_type": "GetNode"
+      "bgcolor": "#3f5159"
     },
     {
       "id": 289,
-      "type": "Note",
+      "type": "ImageExposure+",
       "pos": [
         17044.24609375,
         1180.4761962890625
@@ -9430,20 +9272,33 @@
       "flags": {},
       "order": 149,
       "mode": 0,
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 531
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "image",
+          "links": [
+            483
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle",
         "ver": "1.0.90",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "ImageExposure+",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: ImageExposure+"
+        0.0
       ],
       "color": "#000011",
-      "bgcolor": "#0b092a",
-      "class_type": "Note"
+      "bgcolor": "#0b092a"
     },
     {
       "id": 326,
@@ -9479,8 +9334,7 @@
         "image_upscale"
       ],
       "color": "#000011",
-      "bgcolor": "#0b092a",
-      "class_type": "GetNode"
+      "bgcolor": "#0b092a"
     },
     {
       "id": 298,
@@ -9527,8 +9381,7 @@
         ]
       ],
       "color": "#000011",
-      "bgcolor": "#0b092a",
-      "class_type": "Image Comparer (rgthree)"
+      "bgcolor": "#0b092a"
     },
     {
       "id": 774,
@@ -9562,12 +9415,11 @@
       },
       "widgets_values": [
         "Final"
-      ],
-      "class_type": "SaveImage"
+      ]
     },
     {
       "id": 287,
-      "type": "Note",
+      "type": "ColorCorrect",
       "pos": [
         18030.908203125,
         1163.2672119140625
@@ -9579,24 +9431,45 @@
       "flags": {},
       "order": 250,
       "mode": 0,
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 488
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "image",
+          "links": [
+            489,
+            1026
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle",
         "ver": "1.0.90",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "ColorCorrect",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: ColorCorrect"
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
       ],
       "color": "#000011",
-      "bgcolor": "#0b092a",
-      "class_type": "Note"
+      "bgcolor": "#0b092a"
     },
     {
       "id": 288,
-      "type": "Note",
+      "type": "ImageBrightnessContrast+",
       "pos": [
         17654.615234375,
         1168.3221435546875
@@ -9608,20 +9481,34 @@
       "flags": {},
       "order": 233,
       "mode": 0,
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 500
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "image",
+          "links": [
+            487
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle",
         "ver": "1.0.90",
-        "Node name for S&R": "Note",
+        "Node name for S&R": "ImageBrightnessContrast+",
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Removed: ImageBrightnessContrast+"
+        1.0,
+        1.0
       ],
       "color": "#000011",
-      "bgcolor": "#0b092a",
-      "class_type": "Note"
+      "bgcolor": "#0b092a"
     },
     {
       "id": 773,
@@ -9646,8 +9533,7 @@
         "Auto-Detailer (SAM + Inpaint) – Face / Skin / Eyes / Hands Refinement\n\nUse this module to detect and selectively inpaint specific facial or body zones such as hands, eyes, lips, skin, hair using SAM segmentation and targeted prompts.\n\n⚙️ Recommended Settings\n\nguide_size: 512\n\nmax_size: 1024 or higher\n\nsteps: 20–30\n\ncfg: 1.0–1.5\n\nsampler_name: euler / dpm++\n\ndenoise: 0.10–0.20 (higher will overwrite detail!)\n\nnoise_mask: enabled\n\nforce_inpaint: enabled\n\nbbox_threshold: 0.5\n\nsam_threshold: 0.93 or higher\n\nbbox_crop_factor: 2.5–3.0\n\nfeather: 5–10\n\ndrop_size: 10\n\n⚠️ Denoise – Most Critical Parameter\n\n0.05–0.2: Best for fine corrections, detail preservation\n\n>0.4: Destroys original features — use only for full reconstruction\n\n🎯 Keywords to Guide Detection / Prompting\n\nSkin: skin-tone, pores, freckles, smooth-skin, natural-texture\n\nEyes: eyes, iris, eyelashes, gaze, pupil\n\nHands: hands, fingers, palm, pose, hand-shape\n\nHair: hairline, hair-strands, curly-hair, layered-hair, shiny-hair\n\nLips: mouth, lips, lip-gloss, natural-lips, defined-lips\n\n✅ Tips\n\nPair low denoise with high sam_threshold for consistent results\n\nUse bbox_crop_factor > 2.5 to include edge context\n\nMask feathering helps avoid sharp cutlines (use 5–10)\n\n"
       ],
       "color": "#432",
-      "bgcolor": "#653",
-      "class_type": "Note"
+      "bgcolor": "#653"
     },
     {
       "id": 775,
@@ -9672,8 +9558,7 @@
         "LayerStyle Color Pipeline – Exposure / Grain / Contrast / LUT\nThis module chain allows you to perform final image grading with tools commonly used in film post-production and photography. It adds cinematic grain, contrast control, and precise color grading via LUTs (Look-Up Tables).\n\n🧩 Included Nodes Overview\n1. LayerColor: Exposure\nAdjusts global brightness. Use values from -1.0 to +1.0 depending on scene balance.\n→ Typical: 0.0\n\n2. LayerFilter: Add Grain\nSimulates analog film grain.\n\ngrain_power: 0.20\n\ngrain_scale: 0.4\n\ngrain_sat: 0.75\n\n3. LayerColor: Brightness Contrast V2\nAdjusts post-exposure balance:\n\nbrightness: 1.00\n\ncontrast: 1.10\n\nsaturation: 0.95\n\n4. LayerColor: LUT Apply\nApplies cinematic color grading using .cube LUTs.\n\nLUT: Fuji_Astia.cube\n\ncolor_space: linear or srgb\n\nstrength: 0–100%\n\n📁 Where to Install LUT Files in ComfyUI\nSave your .cube LUT files in the following path:\n\nswift\nCopia\nModifica\nComfyUI/custom_nodes/comfyui-layerstyle/luts/\nOnce added, they will appear in the dropdown inside the LayerColor: LUT Apply node. You may need to restart ComfyUI after adding new files.\n\n🆓 Free LUTs (Full Links)\nRocketStock Free LUTs Pack\nhttps://www.rocketstock.com/free-after-effects-templates/free-color-grading-luts/\n\nIWLTBAP Free LUTs\nhttps://luts.iwltbap.com/free/\n\nColor Grading Central (Free LUTs)\nhttps://www.colorgradingcentral.com/free-luts\n\nJuan Melara Film Print LUTs (Kodak Vision emulation)\nhttps://juanmelara.com.au/print-film-emulation-luts/\n\nDeluts Free Sample LUTs\nhttps://www.deluts.com/\n\n💼 Professional / Paid LUT Packs\nIWLTBAP Pro LUT Collections\nhttps://luts.iwltbap.com/\n\nDeluts – Creative LUTs for filmmakers\nhttps://www.deluts.com/\n\nVisionColor OSIRIS & ImpulZ LUTs\nhttps://www.vision-color.com/osiris/\n\nTriune Digital LUT Collections\nhttps://triunedigital.com/\n\nBounce Color – Cine LUTs & Packs"
       ],
       "color": "#432",
-      "bgcolor": "#653",
-      "class_type": "Note"
+      "bgcolor": "#653"
     },
     {
       "id": 767,
@@ -9698,8 +9583,7 @@
         "Latent Noise Injection – Adjustable Parameters (Portrait Master Workflow)\nThis control group allows for precise fine-tuning of the latent space upscale and reconstruction phase, enhancing the balance between facial detail fidelity, consistency, and photorealism. It is especially effective when generating training images for LoRA, AI influencers, or virtual talent.\n\n1. Latent Upscale (range: 1.0 – 2.0)\nFunction:\nControls the scale factor in the latent space before decoding. It directly affects perceived sharpness and output resolution adaptation.\n\nUsage tips:\n\n1.0: preserves original latent scale (neutral)\n\n1.25–1.5: enhances fine skin details (ideal for portraits)\n\n>1.6: may introduce artifacts or distortions\n\nRecommended for face rendering: 1.25\n\n2. Flux Guidance\nFunction:\nControls the strength of Flux.1 guidance in the image refinement process. A higher value enforces structure and identity retention, especially for character consistency.\n\nUsage tips:\n\n1.0: soft guidance, more creative freedom\n\n1.5–2.0: stronger structural coherence\n\n>2.0: may stiffen natural details\n\nSuggested range: 1.8–2.0 for consistent AI faces\n\n3. Denoise (default 0.55)\nFunction:\nSets the denoising strength. Higher values regenerate more content, which may alter facial identity if pushed too far.\n\nUsage tips:\n\n0.3–0.4: minimal changes, preserves details\n\n0.5–0.6: balanced noise removal and detail retention\n\n>0.7: may overprocess skin or identity features\n\nIdeal for high-fidelity faces: 0.55\n\n4. Speed – Accuracy (default 0.50)\nFunction:\nBalances generation speed vs. detail accuracy. Especially relevant for optimized or hybrid processing nodes.\n\nUsage tips:\n\n0.0: fastest, low detail\n\n1.0: best quality, slower\n\n0.6–0.8: good compromise for previews\n\nRecommended for final renders: 1.0\n\n5. Sharpen (default 0.00)\nFunction:\nApplies post-process latent sharpening to enhance edge clarity, especially in facial features.\n\nUsage tips:\n\n0.0: off (default)\n\n0.1–0.3: enhances eyes and lips\n\n>0.4: risk of over-sharpening or artifacting\n\nSuggested use: 0.1–0.2 when faces appear too soft\n\n6. Rough – Smooth (default 0.60)\nFunction:\nAdjusts skin texture smoothness. Lower values produce raw textures; higher values deliver soft, editorial-style looks.\n\nUsage tips:\n\n0.4: more raw, gritty skin texture\n\n0.6–0.7: balanced and natural\n\n0.8–1.0: beauty-pass effect, good for AI influencers\n\nIdeal for soft editorial portraits: 0.65–0.75\n\n7. Noise Strength (default 0.30)\nFunction:\nInjects controlled latent noise into the generation process, increasing creative variability and breaking rigidity.\n\nUsage tips:\n\n0.1–0.2: low variability, high fidelity\n\n0.3–0.4: good balance for dataset generation\n\n>0.5: use for stylized or cinematic effects\n\nRecommended for LoRA training: 0.30"
       ],
       "color": "#432",
-      "bgcolor": "#653",
-      "class_type": "Note"
+      "bgcolor": "#653"
     },
     {
       "id": 768,
@@ -9724,8 +9608,7 @@
         "Detail Sampling & Distribution Tuning (MXToolkit – Advanced Controls)\nThese two parameters are designed for fine-grain control of how the image is sampled and refined during the latent diffusion process. They act as post-sampling filters that subtly adjust texture rendering, structural balance, and noise behavior.\n\n1. Detail Demon Sampler (suggested: 0.10)\nFunction:\nInjects a controlled micro-detail emphasis layer during sampling. Enhances texture fidelity in facial regions such as skin pores, eyelashes, hair strands, or fabric edges.\n\nUsage tips:\n0.00: off – no enhancement\n0.03–0.07: soft texture boost\n0.08–0.12: stronger detail pop\n>0.15: risk of artificial noise in smooth skin or over-sharpening\n\nRecommended for high-resolution portrait faces: 0.05–0.10\n\nNote: Works best when paired with moderate sharpening and denoise (e.g. denoise = 0.55, sharpen = 0.1)\n\n2. Advanced Lying Sigma Sampler (suggested: -0.06)\nFunction:\nApplies a statistical rebalancing layer to the latent noise field by adjusting sigma deviation behavior. This controls the lying components of the diffusion distribution, effectively minimizing overexposed or uneven texture zones.\n\nUsage tips:\n\n0.00: no correction\n-0.02 to -0.06: gently reduces unwanted haloing or texture bleed\n-0.08 or lower: useful for highly stylized, cinematic results, but may reduce realism\nRecommended value for clean photorealism: -0.05 to -0.06\n\nNote: Has cumulative effects with Noise Strength and Smoothness. Fine-tuning all three ensures maximum skin clarity and visual harmony."
       ],
       "color": "#432",
-      "bgcolor": "#653",
-      "class_type": "Note"
+      "bgcolor": "#653"
     },
     {
       "id": 776,
@@ -9750,8 +9633,7 @@
         "🎲 Seed Control – rgthree-comfy\nThe seed is a numerical value that initializes the random generation process in your diffusion model. It acts like the starting point of image generation: the same seed + same prompt = nearly identical output.\n\n🧭 How to Use It Effectively\n✅ When you find a generation you like, disable randomization to lock the seed. This allows you to produce similar images with minor prompt or LoRA variations.\n\n🎯 Use \"Use Last Queued Seed\" to keep the most recent one, especially useful in iterative refinement workflows.\n\n⚠️ Portraits & Seed Behavior in Flux1\nIn Flux1 workflows, certain seed values tend to generate:\n\nVery close-up portraits\n\nUnnatural neck proportions (elongated or compressed)\n\nCropped foreheads or heads out of frame\n\nWhy?\nBecause the seed influences the initial noise pattern in the latent space, some seeds naturally favor zoomed-in compositions or distorted facial geometry due to how the noise aligns with facial symmetry during diffusion.\n\n✅ Tip\nOnce you find a well-framed, well-proportioned face with a specific seed, reuse it across multiple prompt variations to keep character consistency and framing stable.\n\nIf you're getting consistent deformities: change seed + reduce denoise slightly.\n\n🎲 Understanding the Role of Seeds in AI Image Generation\nIn AI-driven image generation, a seed is a numerical value that initializes the random number generator, setting the starting conditions for the creation process. This seed determines the initial noise pattern from which the image is developed. Using the same seed with identical prompts and settings will consistently produce the same image, ensuring reproducibility. Conversely, altering the seed introduces variability, leading to different outputs even with the same prompt.\n\n🧠 How Seeds Affect Image Characteristics\nSeeds influence various aspects of the generated image, including:\n\nComposition and Layout: The arrangement of elements within the image can vary significantly with different seeds.\n\nColor and Texture: Seeds can affect the color palette and texture details, leading to variations in the image's mood and feel.\n\nLighting and Shadows: The interplay of light and shadow can change, impacting the image's depth and realism.\n\nThese effects stem from the seed's role in determining the initial noise, which guides the diffusion process in generating the final image.\n\n🎯 Best Practices for Seed Utilization\nTo harness the power of seeds effectively:\n\nLocking the Seed: Once a desirable image is generated, note the seed value and reuse it to produce consistent results across multiple iterations or variations.\n\nExploring Variations: To discover new compositions or styles, experiment with different seed values while keeping other parameters constant.\n\nDocumenting Seeds: Maintain a record of seed values that yield favorable results for future reference and reproducibility.\n\n⚠️ Considerations Specific to Flux1\nWithin the Flux1 model, certain seed values may consistently produce specific characteristics:\n\nClose-Up Portraits: Some seeds tend to generate tightly cropped facial images.\n\nDistorted Features: High seed values might lead to unnatural proportions, such as elongated necks or skewed facial features.\n\nThese tendencies are due to how the initial noise pattern interacts with the model's training data and architecture. Adjusting the seed can mitigate such issues, leading to more balanced and natural images.\n\n🔍 Discovering Effective Seed Values\nWhile there isn't a universal list of \"best\" seed values, some communities and studies have identified seeds that consistently produce high-quality images. For instance, research has shown that certain seeds can lead to better image fidelity and composition. Exploring forums, repositories, and academic papers can provide insights into such seed values.\n"
       ],
       "color": "#432",
-      "bgcolor": "#653",
-      "class_type": "Note"
+      "bgcolor": "#653"
     },
     {
       "id": 214,
@@ -9789,8 +9671,7 @@
         25
       ],
       "color": "#e64d00",
-      "bgcolor": "#ff6600",
-      "class_type": "Primitive integer [Crystools]"
+      "bgcolor": "#ff6600"
     },
     {
       "id": 612,
@@ -9844,8 +9725,7 @@
         0.23000000000000004
       ],
       "color": "#002a1e",
-      "bgcolor": "#0e4337",
-      "class_type": "BasicScheduler"
+      "bgcolor": "#0e4337"
     },
     {
       "id": 618,
@@ -9990,8 +9870,7 @@
         ""
       ],
       "color": "#001829",
-      "bgcolor": "#143142",
-      "class_type": "Power Lora Loader (rgthree)"
+      "bgcolor": "#143142"
     },
     {
       "id": 681,
@@ -10049,8 +9928,7 @@
         1
       ],
       "color": "#222",
-      "bgcolor": "#000",
-      "class_type": "mxSlider"
+      "bgcolor": "#000"
     },
     {
       "id": 201,
@@ -10091,8 +9969,7 @@
         null
       ],
       "color": "#e64d00",
-      "bgcolor": "#ff6600",
-      "class_type": "Seed (rgthree)"
+      "bgcolor": "#ff6600"
     },
     {
       "id": 377,
@@ -10135,8 +10012,7 @@
         "image"
       ],
       "color": "#e60000",
-      "bgcolor": "#ff0000",
-      "class_type": "LoadImage"
+      "bgcolor": "#ff0000"
     },
     {
       "id": 643,
@@ -10218,8 +10094,7 @@
       },
       "widgets_values": [],
       "color": "#000000",
-      "bgcolor": "#000000",
-      "class_type": "SamplerCustomAdvanced"
+      "bgcolor": "#000000"
     },
     {
       "id": 645,
@@ -10251,8 +10126,7 @@
       },
       "widgets_values": [],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "PreviewImage"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 763,
@@ -10288,8 +10162,7 @@
         "image_base"
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159",
-      "class_type": "GetNode"
+      "bgcolor": "#3f5159"
     },
     {
       "id": 762,
@@ -10341,8 +10214,7 @@
         ]
       ],
       "color": "#222",
-      "bgcolor": "#000",
-      "class_type": "Image Comparer (rgthree)"
+      "bgcolor": "#000"
     },
     {
       "id": 199,
@@ -10391,8 +10263,7 @@
       },
       "widgets_values": [],
       "color": "#e68900",
-      "bgcolor": "#ffa200",
-      "class_type": "VAEDecode"
+      "bgcolor": "#ffa200"
     },
     {
       "id": 634,
@@ -10429,8 +10300,7 @@
         "latentnoisestrength"
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "GetNode"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 652,
@@ -10505,8 +10375,7 @@
         1
       ],
       "color": "#e6a200",
-      "bgcolor": "#ffbb00",
-      "class_type": "ImageSmartSharpen+"
+      "bgcolor": "#ffbb00"
     },
     {
       "id": 777,
@@ -10544,8 +10413,7 @@
         "Node name for S&R": "easy cleanGpuUsed",
         "widget_ue_connectable": {}
       },
-      "widgets_values": [],
-      "class_type": "easy cleanGpuUsed"
+      "widgets_values": []
     },
     {
       "id": 644,
@@ -10627,8 +10495,7 @@
       },
       "widgets_values": [],
       "color": "#000000",
-      "bgcolor": "#000000",
-      "class_type": "SamplerCustomAdvanced"
+      "bgcolor": "#000000"
     },
     {
       "id": 328,
@@ -10699,8 +10566,7 @@
         ""
       ],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "Power Lora Loader (rgthree)"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 264,
@@ -10776,8 +10642,7 @@
         true
       ],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "InpaintModelConditioning"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 323,
@@ -10813,8 +10678,7 @@
         "image_chinfix"
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159",
-      "class_type": "GetNode"
+      "bgcolor": "#3f5159"
     },
     {
       "id": 275,
@@ -10861,8 +10725,7 @@
       },
       "widgets_values": [],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "InpaintStitchImproved"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 322,
@@ -10903,8 +10766,7 @@
         "image_chinfix"
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159",
-      "class_type": "SetNode"
+      "bgcolor": "#3f5159"
     },
     {
       "id": 276,
@@ -10951,8 +10813,7 @@
       },
       "widgets_values": [],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "VAEDecode"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 277,
@@ -10984,8 +10845,7 @@
       },
       "widgets_values": [],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "PreviewImage"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 554,
@@ -11142,8 +11002,7 @@
         false
       ],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "FaceDetailer"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 779,
@@ -11179,8 +11038,7 @@
         "Node name for S&R": "easy cleanGpuUsed",
         "widget_ue_connectable": {}
       },
-      "widgets_values": [],
-      "class_type": "easy cleanGpuUsed"
+      "widgets_values": []
     },
     {
       "id": 552,
@@ -11232,8 +11090,7 @@
         ]
       ],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "Image Comparer (rgthree)"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 357,
@@ -11293,8 +11150,7 @@
         1
       ],
       "color": "#000000",
-      "bgcolor": "#000000",
-      "class_type": "mxSlider"
+      "bgcolor": "#000000"
     },
     {
       "id": 216,
@@ -11385,8 +11241,7 @@
         ""
       ],
       "color": "#e63400",
-      "bgcolor": "#ff4d00",
-      "class_type": "Power Lora Loader (rgthree)"
+      "bgcolor": "#ff4d00"
     },
     {
       "id": 204,
@@ -11431,8 +11286,7 @@
         "Portrait of a woman in her early 20s, symmetrical oval face, warm tan complexion with soft freckles on cheeks and shoulders, full lips with a defined cupid’s bow, almond-shaped hazel eyes with natural lashes, straight nose, and arched eyebrows. She has a closely cropped pixie haircut, natural black in color, revealing facial structure and ears adorned with small gold stud earrings. Her expression is calm, neutral, and composed, facing the camera directly. She is wearing a minimalist black one-shoulder top, exposing her collarbones and shoulders, suggesting a modern and confident aesthetic.\n\nDetailed Portrait Analysis:\n\n1. Pose:\nThe subject is posed in a straightforward, symmetrical manner — classic head-on composition with both shoulders visible, slightly relaxed posture. Eyes are aligned with the camera, giving the portrait a sense of direct engagement and presence.\n\n2. Facial Details:\n\nEyes: Almond-shaped, hazel with soft catchlights, giving depth and clarity. No makeup or very minimal makeup enhances natural beauty.\n\nSkin: Even, smooth texture with visible freckles across the face and shoulders, contributing to an authentic and natural look.\n\nHair: Ultra-short, cropped pixie cut. The cut accentuates the bone structure, particularly the jawline and cheekbones.\n\nLips and Nose: Full, slightly parted lips; medium-width nose with refined bridge; both features contribute to the model’s striking facial symmetry.\n\n3. Composition:\n\nCentered framing with a balanced amount of headroom.\n\nCropped just below the shoulder line, enhancing focus on facial features and posture.\n\nMinimalist background and outfit maintain the viewer's attention on the subject.\n\n4. Lighting:\n\nSoft, diffused lighting coming from the front, possibly a large softbox or natural window light.\n\nMinimal shadowing with smooth tonal transitions, especially across cheekbones and jawline.\n\nLight background adds a sense of openness and contrast with the subject’s skin and outfit.\n\n5. Outfit & Accessories:\n\nSingle-shoulder black top enhances visual contrast and introduces asymmetry in a clean, elegant way.\n\nSmall gold earrings add a touch of sophistication without detracting from the minimalistic tone of the portrait.\n\n6. Technical Specifications (inferred):\n\nLikely shot with a full-frame DSLR or mirrorless camera (e.g., Canon EOS R5, Nikon Z7 II, or Sony A7R series).\n\nPrime lens, possibly 85mm f/1.4 or 50mm f/1.2, used at wide aperture for creamy bokeh and crisp detail on facial features.\n\nHigh-resolution image (suggesting use of a camera with 30MP+ sensor).\n\nStudio or controlled indoor setting with soft, indirect lighting."
       ],
       "color": "#e63400",
-      "bgcolor": "#ff4d00",
-      "class_type": "CLIPTextEncode"
+      "bgcolor": "#ff4d00"
     },
     {
       "id": 677,
@@ -11492,8 +11346,7 @@
         1
       ],
       "color": "#222",
-      "bgcolor": "#000",
-      "class_type": "mxSlider"
+      "bgcolor": "#000"
     },
     {
       "id": 680,
@@ -11553,8 +11406,7 @@
         1
       ],
       "color": "#222",
-      "bgcolor": "#000",
-      "class_type": "mxSlider"
+      "bgcolor": "#000"
     },
     {
       "id": 569,
@@ -11591,8 +11443,7 @@
         "image_latentinjection"
       ],
       "color": "#506229",
-      "bgcolor": "#697b42",
-      "class_type": "GetNode"
+      "bgcolor": "#697b42"
     },
     {
       "id": 318,
@@ -11630,8 +11481,7 @@
         "image_expression"
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159",
-      "class_type": "GetNode"
+      "bgcolor": "#3f5159"
     },
     {
       "id": 274,
@@ -11742,8 +11592,7 @@
         "32"
       ],
       "color": "#0c1505",
-      "bgcolor": "#252e1e",
-      "class_type": "InpaintCropImproved"
+      "bgcolor": "#252e1e"
     },
     {
       "id": 684,
@@ -11801,8 +11650,7 @@
         1
       ],
       "color": "#222",
-      "bgcolor": "#000",
-      "class_type": "mxSlider"
+      "bgcolor": "#000"
     },
     {
       "id": 682,
@@ -11860,8 +11708,7 @@
         1
       ],
       "color": "#222",
-      "bgcolor": "#000",
-      "class_type": "mxSlider"
+      "bgcolor": "#000"
     },
     {
       "id": 573,
@@ -11897,8 +11744,7 @@
         "ComfyUI"
       ],
       "color": "#506229",
-      "bgcolor": "#697b42",
-      "class_type": "SaveImage"
+      "bgcolor": "#697b42"
     },
     {
       "id": 571,
@@ -11941,8 +11787,7 @@
         "image_expression"
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159",
-      "class_type": "SetNode"
+      "bgcolor": "#3f5159"
     },
     {
       "id": 574,
@@ -12039,8 +11884,7 @@
         1.7000000000000002
       ],
       "color": "#506229",
-      "bgcolor": "#697b42",
-      "class_type": "ExpressionEditor"
+      "bgcolor": "#697b42"
     },
     {
       "id": 770,
@@ -12065,8 +11909,7 @@
         "This segment of the workflow is designed to automatically detect, mask, and refine the chin area using advanced segmentation, cropping, and targeted LoRA application. It is ideal for improving facial symmetry, correcting underdeveloped chins, or ensuring character consistency across generated images.\n\n🔍 Modules Description\n1. SegmentAnything + DINO (SAM + GroundingDINO)\nPurpose:\nPerforms automatic object detection and segmentation using SAM v1 with enhanced bounding box guidance from GroundingDINO.\n\nKey settings:\n\nthreshold: 0.30 – controls object sensitivity\n\ndetail_method: VITMatte – high-precision mask extraction\n\nblack_point / white_point: defines mask range\n\nprocess_detail: true: enables high-detail mode\n\n🧠 Used here to precisely isolate the chin area for editing.\n\n2. LayerMask: SegmentAnythingUltra V3 (Advance)\nPurpose:\nGenerates a high-resolution mask of the selected area (chin) with customizable dilation/erosion parameters.\n\nEnhancements:\n\nSupports CUDA processing\n\nmax_megapixels: 2.0 ensures lightweight mask generation without quality loss\n\n3. Inpaint Crop (Improved)\nPurpose:\nCrops the masked chin area and resizes it for inpainting using a high-quality bicubic upscale. Ensures pixel-level precision and proper mask handling.\n\nKey settings:\n\nmask_fill_holes: true\n\nmask_expand_pixels: 5\n\nmask_blend_pixels: 32\n\ncontext_from_mask_extend_factor: 1.25 → includes surrounding chin area for seamless inpainting\n\noutput_resize_to_target_size: true (1024x1024 target)\n\n4. LoRA Injection – Chin Refinement\nModel Used:\n🔗 Chin Fixer 2000 – LoRA on Civitai\nhttps://civitai.com/models/775002/chin-fixer-2000\nThis LoRA model is trained specifically to refine, beautify, or correct chin shapes, and is applied via the Power LoRA Loader (rgthree) module.\n\nTypical use cases:\n\nRounding or sharpening the chin\n\nFixing asymmetrical or soft jawlines\n\nEnhancing jaw definition for consistent facial structure\n\nStrength recommendation: 1.0 for full effect, can be lowered for subtle corrections\n\n5. Prompt Control – CLIP Text Encode\nInput example:\nperfect round chin\n\nThis prompt helps guide the diffusion model and LoRA towards the intended result. Can be customized for different facial goals, such as:\n\n\"sharp jawline\"\n\n\"defined chin contour\"\n\n\"slightly rounded soft chin\"\n\n6. KSampler\nPurpose:\nFinal latent generation module with full prompt and LoRA conditioning.\n\nNotable parameters:\n\nscheduler: ddim_uniform\n\ndenoise: 1.00 – full rewrite of the cropped area\n\ncfg: 1.0 – prompt adherence\n\nsteps: 30 – sufficient for localized detail rendering"
       ],
       "color": "#432",
-      "bgcolor": "#653",
-      "class_type": "Note"
+      "bgcolor": "#653"
     },
     {
       "id": 780,
@@ -12091,8 +11934,7 @@
         "Expression Editor (PHM) – Expression Transfer Module\nThis node allows you to transfer facial expressions from a reference image to your source portrait, using pixel-aligned morphing based on the AdvancedLivePortrait engine.\n\nIt supports:\n\nWink/blink simulation\n\nEyebrow deformation\n\nPupil movement\n\nPhoneme-based mouth shaping (aaa, eee, woo, etc.)\n\nRealistic smile and eye expressions\n\nRoll, yaw, pitch correction for head orientation\n\nInput Fields\nsrc_image: The original image that will be deformed.\n\nsample_image: The image from which the facial expression is extracted.\n\nmotion_link: Optional vector motion link (for future updates).\n\nParameters Overview\nrotate_pitch / yaw / roll: Controls head orientation\n\nblink / wink / eyebrow / pupil: Controls micro-expressions\n\naaa / eee / woo: Phoneme controls for open mouth / vowel expression shaping\n\nsmile: Controls mouth curvature and cheek lift\n\nsample_parts: Set to OnlyExpression (default) or All if you want also posture\n\ncrop_factor: Controls how much context (neck/shoulder) is used for detection\n\nExpression Activation\nTo activate the expression:\n\nSet sample_image to the reference image containing the desired facial expression\n\nEnsure the add_exp boolean is enabled (set to true)\n\nDisable at Runtime\nTo temporarily bypass the expression effect:\n\nPress Ctrl + B while the node is selected.\nThis disables the node while preserving the visual structure of your graph.\n\nUseful when:\n\nYou want to revert to the base neutral face\n\nYou're batch testing pose/expression variants\n\nOutput\nThe resulting image will combine:\n\nGeometry and lighting from src_image\n\nFacial expression and deformation from sample_image\n(no color or texture information is copied from the sample)"
       ],
       "color": "#432",
-      "bgcolor": "#653",
-      "class_type": "Note"
+      "bgcolor": "#653"
     },
     {
       "id": 570,
@@ -12124,8 +11966,7 @@
       },
       "widgets_values": [],
       "color": "#506229",
-      "bgcolor": "#697b42",
-      "class_type": "PreviewImage"
+      "bgcolor": "#697b42"
     },
     {
       "id": 572,
@@ -12167,8 +12008,7 @@
         "image"
       ],
       "color": "#506229",
-      "bgcolor": "#697b42",
-      "class_type": "LoadImage"
+      "bgcolor": "#697b42"
     },
     {
       "id": 581,
@@ -12211,8 +12051,7 @@
       },
       "widgets_values": [],
       "color": "#002a1e",
-      "bgcolor": "#0e4337",
-      "class_type": "ConditioningZeroOut"
+      "bgcolor": "#0e4337"
     },
     {
       "id": 579,
@@ -12255,8 +12094,7 @@
         "default"
       ],
       "color": "#002a1e",
-      "bgcolor": "#0e4337",
-      "class_type": "DualCLIPLoader"
+      "bgcolor": "#0e4337"
     },
     {
       "id": 580,
@@ -12301,8 +12139,7 @@
         ""
       ],
       "color": "#002a1e",
-      "bgcolor": "#0e4337",
-      "class_type": "CLIPTextEncode"
+      "bgcolor": "#0e4337"
     },
     {
       "id": 578,
@@ -12349,8 +12186,7 @@
       },
       "widgets_values": [],
       "color": "#002a1e",
-      "bgcolor": "#0e4337",
-      "class_type": "CLIPTextEncode"
+      "bgcolor": "#0e4337"
     },
     {
       "id": 617,
@@ -12389,8 +12225,7 @@
         "image_adetailer"
       ],
       "color": "#002a1e",
-      "bgcolor": "#0e4337",
-      "class_type": "GetNode"
+      "bgcolor": "#0e4337"
     },
     {
       "id": 600,
@@ -12437,8 +12272,7 @@
       },
       "widgets_values": [],
       "color": "#001829",
-      "bgcolor": "#143142",
-      "class_type": "CLIPTextEncode"
+      "bgcolor": "#143142"
     },
     {
       "id": 593,
@@ -12481,8 +12315,7 @@
         "default"
       ],
       "color": "#001829",
-      "bgcolor": "#143142",
-      "class_type": "DualCLIPLoader"
+      "bgcolor": "#143142"
     },
     {
       "id": 594,
@@ -12535,8 +12368,7 @@
         "fp8_e4m3fn_fast"
       ],
       "color": "#001829",
-      "bgcolor": "#143142",
-      "class_type": "UNETLoader"
+      "bgcolor": "#143142"
     },
     {
       "id": 597,
@@ -12570,8 +12402,7 @@
         "upscaler con prompt"
       ],
       "color": "#001829",
-      "bgcolor": "#143142",
-      "class_type": "SaveImage"
+      "bgcolor": "#143142"
     },
     {
       "id": 586,
@@ -12623,8 +12454,7 @@
         ]
       ],
       "color": "#001829",
-      "bgcolor": "#143142",
-      "class_type": "Image Comparer (rgthree)"
+      "bgcolor": "#143142"
     },
     {
       "id": 614,
@@ -12685,8 +12515,7 @@
         1
       ],
       "color": "#001829",
-      "bgcolor": "#143142",
-      "class_type": "DetailDaemonSamplerNode"
+      "bgcolor": "#143142"
     },
     {
       "id": 619,
@@ -12740,8 +12569,7 @@
         0.2700000000000001
       ],
       "color": "#001829",
-      "bgcolor": "#143142",
-      "class_type": "BasicScheduler"
+      "bgcolor": "#143142"
     },
     {
       "id": 615,
@@ -12782,8 +12610,7 @@
         "image_upscaled_1"
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159",
-      "class_type": "SetNode"
+      "bgcolor": "#3f5159"
     },
     {
       "id": 583,
@@ -12829,8 +12656,7 @@
         1280
       ],
       "color": "#001829",
-      "bgcolor": "#143142",
-      "class_type": "ModelSamplingFlux"
+      "bgcolor": "#143142"
     },
     {
       "id": 582,
@@ -12876,8 +12702,7 @@
         "euler"
       ],
       "color": "#001829",
-      "bgcolor": "#143142",
-      "class_type": "KSamplerSelect"
+      "bgcolor": "#143142"
     },
     {
       "id": 613,
@@ -12986,8 +12811,7 @@
         false
       ],
       "color": "#001829",
-      "bgcolor": "#143142",
-      "class_type": "UltimateSDUpscaleCustomSample"
+      "bgcolor": "#143142"
     },
     {
       "id": 590,
@@ -13025,12 +12849,11 @@
         "image_upscaled_module_daemon"
       ],
       "color": "#001829",
-      "bgcolor": "#143142",
-      "class_type": "GetNode"
+      "bgcolor": "#143142"
     },
     {
       "id": 782,
-      "type": "Note",
+      "type": "LoadImageFromUrl",
       "pos": [
         13472.91015625,
         1163.378173828125
@@ -13043,19 +12866,26 @@
       "order": 112,
       "mode": 0,
       "inputs": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "name": "joycaption_beta1_model",
+          "type": "JOYCAPTIONBETA1_MODEL",
+          "links": [
+            1029
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle_advance",
         "ver": "0f9184100e626e3202568a7cf890b3b92685a168",
         "widget_ue_connectable": {},
-        "Node name for S&R": "Note"
+        "Node name for S&R": "LoadImageFromUrl"
       },
       "widgets_values": [
-        "Removed: LoadImageFromUrl"
+        ""
       ],
       "color": "#001709",
-      "bgcolor": "#033022",
-      "class_type": "Note"
+      "bgcolor": "#033022"
     },
     {
       "id": 783,
@@ -13091,12 +12921,11 @@
         "JoyCaption options removed - use alternative captioning"
       ],
       "color": "#001709",
-      "bgcolor": "#033022",
-      "class_type": "Note"
+      "bgcolor": "#033022"
     },
     {
       "id": 784,
-      "type": "Note",
+      "type": "WAS Image Interrogator",
       "pos": [
         13473.2353515625,
         1326.093017578125
@@ -13108,20 +12937,50 @@
       "flags": {},
       "order": 167,
       "mode": 0,
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1034
+        },
+        {
+          "name": "joycaption_beta1_model",
+          "type": "JOYCAPTIONBETA1_MODEL",
+          "link": 1029
+        },
+        {
+          "name": "extra_options",
+          "shape": 7,
+          "type": "JoyCaption2ExtraOption",
+          "link": 1030
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": [
+            1031,
+            1040
+          ]
+        }
+      ],
       "properties": {
         "cnr_id": "comfyui_layerstyle_advance",
         "ver": "0f9184100e626e3202568a7cf890b3b92685a168",
         "widget_ue_connectable": {},
-        "Node name for S&R": "Note"
+        "Node name for S&R": "WAS Image Interrogator"
       },
       "widgets_values": [
-        "Removed: WAS Image Interrogator"
+        "ViT-L-14/openai",
+        "best",
+        "fast",
+        76,
+        false
       ],
       "color": "#001709",
-      "bgcolor": "#033022",
-      "class_type": "Note"
+      "bgcolor": "#033022"
     },
     {
       "id": 787,
@@ -13158,8 +13017,7 @@
         "ver": "1.3.0",
         "widget_ue_connectable": {},
         "Node name for S&R": "easy cleanGpuUsed"
-      },
-      "class_type": "easy cleanGpuUsed"
+      }
     },
     {
       "id": 785,
@@ -13203,8 +13061,7 @@
         "The image is a photograph of a person with short, curly brown hair, wearing a black, one-shoulder top. The person has a neutral expression, with light makeup and a small, simple necklace with a black pendant. They have light green eyes and a slightly freckled face. The lighting is soft and natural, coming from the front and slightly to the left, creating even illumination without harsh shadows. The camera angle is straight-on, at eye level, with a shallow depth of field that keeps the background blurred. The background is a plain, light gray color, which does not distract from the subject. The photograph is SFW, with no suggestive or explicit content. The focus is entirely on the person's face and upper torso."
       ],
       "color": "#001709",
-      "bgcolor": "#033022",
-      "class_type": "easy showAnything"
+      "bgcolor": "#033022"
     },
     {
       "id": 389,
@@ -13262,8 +13119,7 @@
         1
       ],
       "color": "#000000",
-      "bgcolor": "#000000",
-      "class_type": "mxSlider"
+      "bgcolor": "#000000"
     }
   ],
   "links": [
