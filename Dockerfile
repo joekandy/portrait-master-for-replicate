@@ -19,35 +19,65 @@ RUN apt-get update && apt-get install -y \
     libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Python packages first (better caching)
-COPY requirements.txt /workspace/requirements.txt
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
-
-# Clone ComfyUI
+# Clone ComfyUI first
 RUN git clone https://github.com/comfyanonymous/ComfyUI.git /workspace/ComfyUI
-
-# Install ComfyUI dependencies
-RUN cd /workspace/ComfyUI && \
-    pip install --no-cache-dir -r requirements.txt
-
-# Create models directories
-RUN mkdir -p /workspace/ComfyUI/models/{checkpoints,vae,loras,embeddings,upscale_models,controlnet,clip_vision,style_models,unet,diffusion_models,text_encoders,clip}
 
 # Copy project files
 COPY . /workspace/
+
+# Install Python packages (without torch conflicts)
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir \
+    transformers>=4.25.1 \
+    tokenizers>=0.13.3 \
+    sentencepiece \
+    safetensors>=0.4.2 \
+    aiohttp \
+    accelerate \
+    pyyaml \
+    Pillow \
+    scipy \
+    tqdm \
+    psutil \
+    opencv-python==4.10.0.84 \
+    opencv-contrib-python==4.10.0.84 \
+    numpy==1.26.4 \
+    matplotlib \
+    imageio \
+    imageio-ffmpeg \
+    requests \
+    fastapi \
+    uvicorn \
+    websockets \
+    aiofiles \
+    huggingface-hub \
+    diffusers \
+    compel \
+    python-multipart \
+    python-dotenv \
+    typing-extensions \
+    runpod \
+    bitsandbytes \
+    optimum \
+    einops \
+    librosa \
+    soundfile \
+    gitpython \
+    wget
+
+# Install ComfyUI dependencies
+RUN cd /workspace/ComfyUI && \
+    pip install --no-cache-dir -r requirements.txt || echo "ComfyUI requirements skipped"
+
+# Create models directories
+RUN mkdir -p /workspace/ComfyUI/models/{checkpoints,vae,loras,embeddings,upscale_models,controlnet,clip_vision,style_models,unet,diffusion_models,text_encoders,clip}
 
 # Setup ComfyUI custom nodes directory
 RUN mkdir -p /workspace/ComfyUI/custom_nodes
 
 # Install essential custom nodes
 RUN cd /workspace/ComfyUI/custom_nodes && \
-    git clone https://github.com/ltdrdata/ComfyUI-Manager.git || true && \
-    git clone https://github.com/WASasquatch/was-node-suite-comfyui.git || true
-
-# Install custom nodes dependencies (with error handling)
-RUN cd /workspace/ComfyUI/custom_nodes/was-node-suite-comfyui && \
-    pip install --no-cache-dir -r requirements.txt || true
+    git clone https://github.com/ltdrdata/ComfyUI-Manager.git || true
 
 # Make scripts executable
 RUN chmod +x /workspace/scripts/*.sh || true
