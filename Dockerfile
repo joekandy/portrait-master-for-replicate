@@ -19,28 +19,16 @@ RUN apt-get update && apt-get install -y \
     libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
+# Install Python packages first (better caching)
+COPY requirements.txt /workspace/requirements.txt
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
+
 # Clone ComfyUI
 RUN git clone https://github.com/comfyanonymous/ComfyUI.git /workspace/ComfyUI
 
-# Install ComfyUI requirements
-COPY requirements.txt /workspace/requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
-
 # Install ComfyUI dependencies
 RUN cd /workspace/ComfyUI && \
-    pip install --no-cache-dir -r requirements.txt
-
-# Setup ComfyUI custom nodes directory
-RUN mkdir -p /workspace/ComfyUI/custom_nodes
-
-# Install essential custom nodes
-RUN cd /workspace/ComfyUI/custom_nodes && \
-    git clone https://github.com/ltdrdata/ComfyUI-Manager.git && \
-    git clone https://github.com/WASasquatch/was-node-suite-comfyui.git && \
-    git clone https://github.com/Fannovel16/comfyui_controlnet_aux.git
-
-# Install custom nodes dependencies
-RUN cd /workspace/ComfyUI/custom_nodes/was-node-suite-comfyui && \
     pip install --no-cache-dir -r requirements.txt
 
 # Create models directories
@@ -49,17 +37,30 @@ RUN mkdir -p /workspace/ComfyUI/models/{checkpoints,vae,loras,embeddings,upscale
 # Copy project files
 COPY . /workspace/
 
+# Setup ComfyUI custom nodes directory
+RUN mkdir -p /workspace/ComfyUI/custom_nodes
+
+# Install essential custom nodes
+RUN cd /workspace/ComfyUI/custom_nodes && \
+    git clone https://github.com/ltdrdata/ComfyUI-Manager.git || true && \
+    git clone https://github.com/WASasquatch/was-node-suite-comfyui.git || true
+
+# Install custom nodes dependencies (with error handling)
+RUN cd /workspace/ComfyUI/custom_nodes/was-node-suite-comfyui && \
+    pip install --no-cache-dir -r requirements.txt || true
+
 # Make scripts executable
-RUN chmod +x /workspace/scripts/*.sh
+RUN chmod +x /workspace/scripts/*.sh || true
 
 # Setup ComfyUI Manager without restrictions
-RUN echo '{"security_level": 0, "skip_update_check": true, "channel_url": "https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main", "share_option": "all", "bypass_ssl": true}' > /workspace/ComfyUI/custom_nodes/ComfyUI-Manager/config.ini
+RUN mkdir -p /workspace/ComfyUI/custom_nodes/ComfyUI-Manager && \
+    echo '{"security_level": 0, "skip_update_check": true, "channel_url": "https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main", "share_option": "all", "bypass_ssl": true}' > /workspace/ComfyUI/custom_nodes/ComfyUI-Manager/config.ini
 
-# Download essential models
-RUN /workspace/scripts/download_models.sh
+# Download essential models (with error handling)
+RUN /workspace/scripts/download_models.sh || echo "Model download failed - will try at runtime"
 
 # Setup environment variables
-ENV PYTHONPATH="/workspace:/workspace/ComfyUI:$PYTHONPATH"
+ENV PYTHONPATH="/workspace:/workspace/ComfyUI"
 ENV COMFYUI_PATH="/workspace/ComfyUI"
 ENV CUDA_VISIBLE_DEVICES=0
 ENV PYTORCH_CUDA_ALLOC_CONF="max_split_size_mb:512,expandable_segments:True"
